@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ajay Jayaraj - Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Google Font: Advent Pro (as in the reference) -->
+  <link href="https://fonts.googleapis.com/css2?family=Advent+Pro&display=swap" rel="stylesheet">
+  <!-- Typed.js for tagline animation -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" />
+</head>
+<body>
+  
+  <!-- STICKY NAVBAR (Following the reference structure) -->
+  <header class="cyberpunk">
+    <nav class="navbar">
+      <div class="nav-brand">AJ</div>
+      <div class="nav-toggle" id="nav-toggle">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+      <ul class="nav-list" id="nav-list">
+        <li><a href="#education">Education</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#tech-stack">Tech Stack</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#awards">Awards</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <!-- FLOATING SHARE PANEL (Single floating button that expands to show social icons) -->
+  <div class="floating-buttons">
+    <button id="share-toggle" title="Share"><i class="fa-regular fa-address-card"></i></button>
+    <div class="social-icons" id="social-icons">
+      <a href="mailto:ajaysri2016@gmail.com" title="Email"><i class="fa-solid fa-envelope"></i></a>
+      <a href="https://www.linkedin.com/in/ajayj2000/" title="LinkedIn" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+      <a href="https://github.com/AjayAJ2000" title="GitHub" target="_blank"><i class="fa-brands fa-github"></i></a>
+      <a href="https://www.instagram.com/ajay.jayaraj.04/" title="Instagram" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://wa.me/+918220937538" title="WhatsApp" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+      <a href="tel:+918220937538" title="Phone"><i class="fa-solid fa-phone"></i></a>
+    </div>
+  </div>
+  
+  <!-- HERO SECTION -->
+  <section class="hero cyberpunk">
+    <div class="hero-container">
+      <div class="hero-image">
+        <img src="images/profile.png" alt="Photo of Ajay" />
+      </div>
+      <div class="hero-text">
+        <h1>Hey, I'm <span class="highlight">Ajay Jayaraj</span></h1>
+        <p id="typed-text" class="typed-text"></p>
+        <div class="hero-btn-group">
+          <a href="#contact" class="btn">Get In Touch</a>
+          <a href="files/resume.pdf" class="btn download-btn" download>Download Resume</a>
+        </div>
+      </div>
+    </div>
+    <!-- Wave Divider... -->
+  </section>
+  
+  <!-- MAIN CONTENT -->
+  <main class="cyberpunk">
+    <!-- Education Section -->
+    <section id="education">
+      <h2>Education</h2>
+      <p>Bachelor of Technology, SASTRA UNIVERSITY <br> Jun 2018 - Apr 2022</p>
+    </section>
+    
+    <!-- Skills Section -->
+    <section id="skills">
+      <h2>Skills</h2>
+      <ul>
+        <li><strong>Data Engineering:</strong> Azure Databricks, Azure Data Factory, Azure Data Lake Storage, Azure Blob Storage, Azure Functions, Azure Logic Apps, Snowflake, Python, SQL, Apache Spark (Spark SQL, PySpark)</li>
+        <li><strong>Data Analysis:</strong> Root Cause Analysis, Data Warehousing, Data Modelling</li>
+        <li><strong>AI/ML Tools:</strong> Retrieved Augmented Generation, Prompt Engineering</li>
+        <li><strong>Version Control:</strong> Git</li>
+      </ul>
+    </section>
+    
+    <!-- Tech Stack Section -->
+    <section id="tech-stack">
+      <h2>Tech Stack</h2>
+      <div class="tech-logos">
+        <div class="tech-item">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="Microsoft Azure" title="Microsoft Azure">
+          <p>Azure</p>
+        </div>
+        <div class="tech-item">
+          <img src="https://cdn.brandfetch.io/idSUrLOWbH/idOSUN2QlG.svg?c=1dxbfHSJFAPEGdCLU4o5B" alt="Azure Databricks" title="Azure Databricks">
+          <p>Databricks</p>
+        </div>
+        <div class="tech-item">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" title="Python">
+          <p>Python</p>
+        </div>
+        <div class="tech-item">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/f/f3/Apache_Spark_logo.svg" alt="Apache Spark" title="Apache Spark">
+          <p>Spark</p>
+        </div>
+        <div class="tech-item">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" title="Git">
+          <p>Git</p>
+        </div>
+        <div class="tech-item">
+          <img src="https://cdn.brandfetch.io/idJz-fGD_q/w/400/h/400/theme/dark/icon.png?c=1dxbfHSJFAPEGdCLU4o5B" alt="Snowflake" title="Snowflake">
+          <p>Snowflake</p>
+        </div>
+        <div class="tech-item">
+          <img src="https://static.vecteezy.com/system/resources/thumbnails/036/105/045/small_2x/artificial-intelligence-ai-processor-chip-icon-symbol-for-graphic-design-logo-web-site-social-media-png.png" alt="AI/ML" title="AI/ML">
+          <p>AI/ML</p>
+        </div>
+      </div>
+    </section>
+    <br>
+    <br>
+    <!-- Experience Section -->
+    <section id="experience">
+      <h2>Experience</h2>
+      <h3>Data Engineer, ZS Associates</h3>
+      <p>SEP 2022 - PRESENT</p>
+      <ul>
+        <li>Developed and managed automated data workflows with Azure Databricks, ensuring secure data delivery via Azure Data Factory.</li>
+        <li>Established data governance in Azure Databricks, achieving 100% compliance with PHI/HIPAA standards.</li>
+        <li>Architected pipelines using Azure Data Factory to ingest and transform provider and Pharma data, optimizing Snowflake processing.</li>
+        <li>Programmed complex SQL queries powering dashboards for $500M contracts, enhancing operational efficiency.</li>
+        <li>Created an End-to-End Data &amp; Platform Architecture using Azure and Snowflake for critical projects.</li>
+        <li>Developed scalable frameworks reducing project turnaround time by 40%.</li>
+        <li>Boosted team productivity by training over 50 employees on cutting-edge AI trends.</li>
+      </ul>
+    </section>
+    
+    <!-- Projects Section -->
+    <section id="projects">
+      <h2>Projects</h2>
+      <h3>InspiroGene Product - Data &amp; Platform Engineering</h3>
+      <ul>
+        <li>Optimized the core data pipeline powering the InspiroGene product's analytics dashboard, achieving a 20% speed improvement.</li>
+        <li>Spearheaded platform engineering for near real-time analytics across 5+ service lines.</li>
+      </ul>
+      <h3>Financial Planning and Analysis - Data and Gen AI Engineering</h3>
+      <ul>
+        <li>Designed data infrastructure for 4+ FP&amp;A projects to enable timely financial reporting.</li>
+        <li>Engineered a document chunking solution using LLMs and Vector Databases, improving query efficiency by 40%.</li>
+      </ul>
+    </section>
+    
+    <!-- Certifications Section -->
+    <section id="certifications">
+      <h2>Certifications</h2>
+      <div class="certifications-logos">
+        <div class="certification-item">
+          <a href="https://learn.microsoft.com/en-us/users/ajayj2000-0407/credentials/2317b44b3714ff37" target="_blank">
+            <img src="https://learn.microsoft.com/en-us/media/learn/certification/badges/microsoft-certified-associate-badge.svg" alt="DP-203 Badge" title="Microsoft Certified: Azure Data Engineer Associate - DP-203"/>
+          </a>
+          <p>Azure Data Engineer Associate - DP-203</p>
+        </div>
+        <div class="certification-item">
+          <a href="https://credentials.databricks.com/f7acb3db-f793-4f83-84d3-d0e52b143229" target="_blank">
+            <img src="https://templates.images.credential.net/16875328858623774637935876095299.png" alt="Databricks Accredited Azure Platform Architect" title="Databricks Accredited Azure Platform Architect"/>
+          </a>
+          <p>Databricks Accredited Azure Platform Architect</p>
+        </div>
+        <div class="certification-item">
+          <a href="https://credentials.databricks.com/044a0269-9bb0-46cb-a5fa-3d76ebb6db39#acc.UL8rip1e" target="_blank">
+            <img src="https://templates.images.credential.net/17186544995863741044211341130037.png" alt="Gen AI &amp; LLM on Databricks" title="Gen AI &amp; LLM on Databricks"/>
+          </a>
+          <p>Gen AI &amp; LLM on Databricks</p>
+        </div>
+      </div>
+    </section>
+    <br>
+    <br>
+
+    <!-- Awards Section -->
+    <section id="awards">
+      <h2>Awards and Achievements</h2>
+      <p>Lauded within cross-functional teams at ZS as the “Flawless Finishers” after implementing refined protocols that increased accuracy on deliverables up to 99%.</p>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact">
+      <h2>Contact</h2>
+      <p><i class="fa-solid fa-envelope"></i> Email: <a href="mailto:ajaysri2016@gmail.com">ajaysri2016@gmail.com</a></p>
+      <p><i class="fa-brands fa-linkedin"></i> LinkedIn: <a href="https://www.linkedin.com/in/ajayj2000/" target="_blank">Ajay Jayaraj</a></p>
+      <p><i class="fa-brands fa-github"></i> GitHub: <a href="https://github.com/AjayAJ2000" target="_blank">AjayAJ2000</a></p>
+    </section>
+  </main>
+  
+  <!-- FOOTER -->
+  <footer class="cyberpunk">
+    <p>&copy; 2025 Ajay Jayaraj. All rights reserved.</p>
+  </footer>
+  
+  <!-- JAVASCRIPT -->
+  <script>
+        document.addEventListener('DOMContentLoaded', () => {
+      // Smooth scrolling for nav links
+      document.querySelectorAll('.nav-list a').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          e.preventDefault();
+          const targetId = this.getAttribute('href');
+          document.querySelector(targetId).scrollIntoView({ behavior: 'smooth' });
+        });
+      });
+
+  
+    // Initialize Typed.js for tagline (existing)
+    new Typed('#typed-text', {
+      strings: [
+        "Data Engineer exploring new frontiers",
+        "Cloud, AI, and Data Enthusiast",
+        "Engineer by day, Innovator by night"
+      ],
+      typeSpeed: 50,
+      backSpeed: 25,
+      backDelay: 1500,
+      startDelay: 500,
+      loop: true
+    });
+  
+    // Floating share panel toggle
+    const shareToggle = document.getElementById('share-toggle');
+    const socialIcons = document.getElementById('social-icons');
+  
+    shareToggle.addEventListener('click', (event) => {
+      event.stopPropagation(); // Prevent click from propagating to document
+      socialIcons.classList.toggle('visible');
+      // Toggle icon: if panel is visible, show "times" icon, else show "share-nodes"
+      if (socialIcons.classList.contains('visible')) {
+        shareToggle.innerHTML = '<i class="fa-solid fa-times"></i>';
+      } else {
+        shareToggle.innerHTML = '<i class="fa-solid fa-share-nodes"></i>';
+      }
+    });
+  
+    // If user clicks outside the floating panel, close the social icons if open
+    document.addEventListener('click', (e) => {
+      if (!document.querySelector('.floating-buttons').contains(e.target)) {
+        if (socialIcons.classList.contains('visible')) {
+          socialIcons.classList.remove('visible');
+          shareToggle.innerHTML = '<i class="fa-solid fa-share-nodes"></i>';
+        }
+      }
+    });
+  });
+  </script>
+</body>
+</html>
