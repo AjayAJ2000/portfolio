@@ -131,6 +131,22 @@ body.light-mode section.cyberpunk {
               0 0 15px 6px #00008b;
 }
 
+/* Light Mode Floating Buttons */
+body.light-mode .floating-buttons #share-toggle,
+body.light-mode .floating-buttons .social-icons a,
+body.light-mode .floating-buttons #theme-toggle {
+  background: #ffffff !important;
+  color: #00008b !important;
+  border: 1px solid #00008b !important;
+}
+
+body.light-mode .floating-buttons #share-toggle:hover,
+body.light-mode .floating-buttons .social-icons a:hover,
+body.light-mode .floating-buttons #theme-toggle:hover {
+  background: #00008b !important;
+  color: #ffffff !important;
+}
+
 /* 2) Global Text Alignment & Colors */
 section h1,
 section h2,
@@ -308,9 +324,18 @@ floating-buttons #share-toggle:hover {
   margin-bottom: 10px; /* Add some space between the buttons */
 }
 
-.floating-buttons #theme-toggle:hover {
+floating-buttons #theme-toggle:hover {
   transform: scale(1.1);
   background: #00d8ff;
+}
+
+/* Floating Buttons Border Color Adjustment */
+.floating-buttons button {
+  border-color: var(--yellow-color) !important;
+}
+
+body.light-mode .floating-buttons button {
+  border-color: #00008b !important;
 }
 
 /* 5) Hero Layout: Photo on left (desktop) in greyscale; text on right; mobile: stack with photo at bottom */
@@ -526,4 +551,33 @@ body.light-mode .contact-grid i,
 body.light-mode .nav-list li a i,
 body.light-mode .hero-btn-group a i {
   color: #00008b !important;
+}
+
+/* Blog Section Styles */
+#blog {
+  padding: px;
+  background-color: var(--body-bg-color);
+  color: var(--text-color);
+}
+
+#blog h2 {
+  color: var(--title-color);
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+
+/* Light Mode Blog Section */
+body.light-mode #blog {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+body.light-mode #blog h2,
+body.light-mode #blog .blog-post h3 {
+  color: #00008b;
+}
+
+body.light-mode #blog .blog-post p {
+  color: #000000;
 }
