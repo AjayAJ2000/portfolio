@@ -17,6 +17,11 @@
       font-family: 'Advent Pro', Arial, sans-serif;
       scroll-behavior: smooth;
     }
+    /* Ensure carousel controls are visible in light mode */
+    body.bg-light .carousel-control-prev-icon,
+    body.bg-light .carousel-control-next-icon {
+      filter: invert(1);
+    }
   </style>
 </head>
 <body class="bg-dark text-light">
@@ -71,7 +76,7 @@
     <div class="container">
       <div class="row align-items-center">
         <div class="col-md-5 text-center">
-          <img src="images/profile.png" alt="Photo of Ajay" class="img-fluid rounded w-50 mx-auto d-block">
+          <img src="images/profile.png" alt="Photo of Ajay" class="img-fluid rounded w-85 mx-auto d-block">
         </div>
         <div class="col-md-7">
           <h1 class="text-center">Hey, I'm <span class="text-primary">Ajay Jayaraj</span></h1>
@@ -219,7 +224,7 @@
       <div id="certCarousel" class="carousel slide d-md-none" data-bs-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active text-center">
-            <a href="https://learn.microsoft.com/api/credentials/share/en-us/AjayJ2000-0407/2317B44B3714FF37?sharingId=BDE5E2901453D070" target="_blank">
+            <a href="https://learn.microsoft.com/en-us/users/ajayj2000-0407/credentials/2317b44b3714ff37" target="_blank">
               <img src="https://learn.microsoft.com/en-us/media/learn/certification/badges/microsoft-certified-associate-badge.svg" alt="Azure Data Engineer Associate - DP-203" class="d-block mx-auto" style="max-width:200px;">
             </a>
             <div class="carousel-caption d-none d-md-block">
@@ -279,7 +284,10 @@
     <section id="blog" class="mb-5 text-center">
       <h2 class="mb-3"><i class="fa-solid fa-blog"></i> Blog</h2>
       <p>Check out my latest articles and insights on technology, data engineering, and more. Stay updated with the trends in the tech world.</p>
-      <a href="https://yourtechjournalist.blogspot.com/" class="btn btn-primary">Visit My Blog</a>
+      <a href="https://yourtechjournalist.blogspot.com/" class="btn btn-primary">
+        <!-- <img src="images/tj_logo.png" alt="TechJournalist Logo" class = "img-fluid" style="max-width:50px;"><br> -->
+        Visit TechJournalist Blog
+      </a>
     </section>
 
     <!-- Awards Section -->
