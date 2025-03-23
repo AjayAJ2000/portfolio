@@ -31,56 +31,6 @@
     body.bg-light .carousel-control-next-icon {
       filter: invert(1);
     }
-    /* Global styles for light and dark modes */
-    .bg-dark-mode {
-      background-color: #212529 !important;
-      color: #f8f9fa !important;
-    }
-    .bg-light-mode {
-      background-color: #f8f9fa !important;
-      color: #212529 !important;
-    }
-    .text-dark-mode {
-      color: #f8f9fa !important;
-    }
-    .text-light-mode {
-      color: #212529 !important;
-    }
-    /* Align accordion toggle icons to the right corner */
-    .accordion-button {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .accordion-button i {
-      margin-left: auto;
-      align-self: center; /* Ensure the icon aligns vertically */
-    }
-    /* Ensure accordion toggle icons are visible in dark mode */
-    body.bg-dark .accordion-button i {
-      filter: invert(1);
-    }
-    /* Ensure carousel controls are visible in dark mode */
-    body.bg-dark .carousel-control-prev-icon,
-    body.bg-dark .carousel-control-next-icon {
-      filter: invert(1);
-    }
-    /* Ensure accordion toggle icons are visible in both light and dark modes */
-    .accordion-button i {
-      margin-left: auto;
-      align-self: center; /* Ensure the icon aligns vertically */
-    }
-    body.bg-light .accordion-button i,
-    body.bg-dark .accordion-button i {
-      filter: invert(1); /* Ensure visibility in both modes */
-    }
-    /* Ensure carousel controls are visible in both light and dark modes */
-    body.bg-light .carousel-control-prev-icon,
-    body.bg-light .carousel-control-next-icon,
-    body.bg-dark .carousel-control-prev-icon,
-    body.bg-dark .carousel-control-next-icon {
-      filter: invert(1);
-    }
   </style>
 </head>
 <body class="bg-dark text-light">
@@ -121,6 +71,7 @@
         <li><a class="dropdown-item" href="https://github.com/AjayAJ2000" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a></li>
         <li><a class="dropdown-item" href="https://www.instagram.com/ajay.jayaraj.04/" target="_blank"><i class="fa-brands fa-instagram"></i> Instagram</a></li>
         <li><a class="dropdown-item" href="https://wa.me/+918220937538" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a></li>
+        <li><a class="dropdown-item" href="tel:+918220937538"><i class="fa-solid fa-phone"></i> Phone</a></li>
       </ul>
     </div>
     <!-- Theme Toggle Button -->
@@ -164,41 +115,41 @@
           <div class="p-3 bg-secondary bg-opacity-25 rounded">
             <strong><i class="fa-solid fa-database"></i> Data Engineering:</strong><br>
             </i> 
-            <span class="badge bg-info fs-6"><i class="fa-brands fa-microsoft"></i> Azure Cloud</span> 
-            <span class="badge bg-danger fs-6">Azure Databricks</span>
-            <span class="badge bg-info fs-6">Azure Data Factory</span>
-            <span class="badge bg-info fs-6">Azure Data Lake Storage</span>
-            <span class="badge bg-info fs-6">Azure Blob Storage</span>
-            <span class="badge bg-info fs-6">Azure Functions</span>
-            <span class="badge bg-info fs-6">Azure Logic Apps</span>
-            <span class="badge bg-primary fs-6">Snowflake</span>
-            <span class="badge bg-success fs-6">Python</span>
-            <span class="badge bg-success fs-6">SQL</span>
-            <span class="badge bg-danger fs-6">Apache Spark</span>
-            <span class="badge bg-danger fs-6">Spark SQL</span>
-            <span class="badge bg-danger fs-6">PySpark</span>
+            <span class="badge bg-info "><i class="fa-brands fa-microsoft"></i>Azure Cloud</span> 
+            <span class="badge bg-danger ">Azure Databricks</span>
+            <span class="badge bg-info ">Azure Data Factory</span>
+            <span class="badge bg-info ">Azure Data Lake Storage</span>
+            <span class="badge bg-info ">Azure Blob Storage</span>
+            <span class="badge bg-info ">Azure Functions</span>
+            <span class="badge bg-info ">Azure Logic Apps</span>
+            <span class="badge bg-primary">Snowflake</span>
+            <span class="badge bg-success">Python</span>
+            <span class="badge bg-success">SQL</span>
+            <span class="badge bg-danger">Apache Spark</span>
+            <span class="badge bg-danger">Spark SQL</span>
+            <span class="badge bg-danger">PySpark</span>
           </div>
         </div>
         <div class="col-12 col-md-4 mb-3">
           <div class="p-3 bg-secondary bg-opacity-25 rounded">
             <strong><i class="fa-solid fa-chart-line"></i> Data Analysis:</strong><br>
-            <span class="badge bg-success fs-6">Root Cause Analysis</span>
-            <span class="badge bg-success fs-6">Data Warehousing</span>
-            <span class="badge bg-success fs-6">Data Modelling</span>
+            <span class="badge bg-success">Root Cause Analysis</span>
+            <span class="badge bg-success">Data Warehousing</span>
+            <span class="badge bg-success">Data Modelling</span>
           </div>
         </div>
         <div class="col-12 col-md-4 mb-3">
           <div class="p-3 bg-secondary bg-opacity-25 rounded">
             <strong><i class="fa-solid fa-robot"></i> AI/ML Tools:</strong><br>
-            <span class="badge bg-warning text-dark fs-6">Retrieved Augmented Generation</span>
-            <span class="badge bg-warning text-dark fs-6">Prompt Engineering</span>
+            <span class="badge bg-warning text-dark">Retrieved Augmented Generation</span>
+            <span class="badge bg-warning text-dark">Prompt Engineering</span>
           </div>
         </div>
         <div class="col-12 col-md-4 mb-3">
           <div class="p-3 bg-secondary bg-opacity-25 rounded">
             <strong><i class="fa-brands fa-git-alt"></i> Version Control:</strong><br>
-            <span class="badge bg-secondary fs-6">Git</span>
-            <span class="badge bg-secondary fs-6">GitHub</span>
+            <span class="badge bg-secondary">Git</span>
+            <span class="badge bg-secondary">GitHub</span>
           </div>
         </div>
       </div>
@@ -258,8 +209,6 @@
                 <li><strong>Efficiency Improvements:</strong> Developed scalable, reusable frameworks that reduced project turnaround time by 40%, addressing recurring challenges in data engineering.</li>
                 <li><strong>Team Training &amp; Innovation:</strong> Trained over 50 employees on cutting-edge AI trends and practical applications, resulting in a 65% improvement in efficiency when tackling daily data and technology challenges.</li>
               </ul>
-              <!-- Add border to project links -->
-              
             </div>
           </div>
         </div>
@@ -270,14 +219,12 @@
     <!-- Projects Section (Grid Cards) -->
     <section id="projects" class="mb-5">
       <h2 class="mb-3 text-center"><i class="fa-solid fa-project-diagram"></i> Projects</h2>
-      <div class="card bg-dark text-light border-primary">
-      <div class="accordion" id="projectsAccordion">
+      <div class="accordion accordion-flush" id="projectsAccordion">
         <!-- Project 1 -->
         <div class="accordion-item bg-dark text-light border-primary">
           <h2 class="accordion-header" id="headingOne">
             <button class="accordion-button bg-dark text-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
               InspiroGene Product - Data &amp; Platform Engineering
-                <span class="ms-auto d-flex justify-content-end"></span>
             </button>
           </h2>
           <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#projectsAccordion">
@@ -285,34 +232,34 @@
               <h4 class="card-title text-center">InspiroGene Product - Data &amp; Platform Engineering</h4>
               <h5 class="text-primary">Skills</h5>
               <!-- Data Engineering -->
-              <span class="badge bg-info  fs-6">Azure Cloud</span> 
-              <span class="badge bg-danger fs-6">Azure Databricks</span>
-              <span class="badge bg-info  fs-6">Azure Data Factory</span>
-              <span class="badge bg-info  fs-6">Azure Data Lake Storage</span>
-              <span class="badge bg-info  fs-6">Azure Blob Storage</span>
-              <span class="badge bg-info  fs-6">Azure Functions</span>
-              <span class="badge bg-info  fs-6">Azure Logic Apps</span>
-              <span class="badge bg-primary fs-6">Snowflake</span>
-              <span class="badge bg-primary fs-6">Python</span>
-              <span class="badge bg-primary fs-6">SQL</span>
-              <span class="badge bg-primary fs-6">Apache Spark</span>
-              <span class="badge bg-primary fs-6">Spark SQL</span>
-              <span class="badge bg-primary fs-6">PySpark</span>
+              <span class="badge bg-info ">Azure Cloud</span> 
+              <span class="badge bg-danger">Azure Databricks</span>
+              <span class="badge bg-info ">Azure Data Factory</span>
+              <span class="badge bg-info ">Azure Data Lake Storage</span>
+              <span class="badge bg-info ">Azure Blob Storage</span>
+              <span class="badge bg-info ">Azure Functions</span>
+              <span class="badge bg-info ">Azure Logic Apps</span>
+              <span class="badge bg-primary">Snowflake</span>
+              <span class="badge bg-primary">Python</span>
+              <span class="badge bg-primary">SQL</span>
+              <span class="badge bg-primary">Apache Spark</span>
+              <span class="badge bg-primary">Spark SQL</span>
+              <span class="badge bg-primary">PySpark</span>
 
                 <!-- Data Analysis -->
-                <span class="badge bg-success fs-6">Root Cause Analysis</span>
-                <span class="badge bg-success fs-6">Data Warehousing</span>
-                <span class="badge bg-success fs-6">Data Modelling</span>
+                <span class="badge bg-success">Root Cause Analysis</span>
+                <span class="badge bg-success">Data Warehousing</span>
+                <span class="badge bg-success">Data Modelling</span>
 
                 <!-- AI/ML Tools -->
-                <span class="badge bg-warning text-dark fs-6">Retrieved Augmented Generation</span>
-                <span class="badge bg-warning text-dark fs-6">Prompt Engineering</span>
+                <span class="badge bg-warning text-dark">Retrieved Augmented Generation</span>
+                <span class="badge bg-warning text-dark">Prompt Engineering</span>
 
                 <!-- Version Control -->
-                <span class="badge bg-secondary fs-6">Git</span>
-                <span class="badge bg-primary fs-6">HIPAA Compliance</span>
-                <span class="badge bg-primary fs-6">Data Governance</span>
-                <span class="badge bg-primary fs-6">Platform Design</span>
+                <span class="badge bg-secondary">Git</span>
+                <span class="badge bg-primary">HIPAA Compliance</span>
+                <span class="badge bg-primary">Data Governance</span>
+                <span class="badge bg-primary">Platform Design</span>
                 <br><br>
               <h5 class="text-primary">Situation</h5>
               <p>
@@ -349,7 +296,6 @@
           <h2 class="accordion-header" id="headingTwo">
             <button class="accordion-button bg-dark text-light collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
               Financial Planning &amp; Analysis - Data and Gen AI Engineering
-              <span class="ms-auto"></span>
             </button>
           </h2>
           <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#projectsAccordion">
@@ -357,32 +303,32 @@
               <h4 class="card-title text-center">Financial Planning &amp; Analysis - Data and Gen AI Engineering</h4>
               <h5 class="text-primary">Skills</h5>
               <!-- Data Engineering -->
-                <span class="badge bg-info fs-6 ">Azure Cloud</span> 
-                <span class="badge bg-danger fs-6">Azure Databricks</span>
-                <span class="badge bg-info fs-6 ">Azure Data Factory</span>
-                <span class="badge bg-info fs-6 ">Azure Data Lake Storage</span>
-                <span class="badge bg-info  fs-6">Azure Blob Storage</span>
-                <span class="badge bg-info  fs-6">Azure Functions</span>
-                <span class="badge bg-info  fs-6">Azure Logic Apps</span>
-                <span class="badge bg-primary fs-6">Snowflake</span>
-                <span class="badge bg-primary fs-6">Python</span>
-                <span class="badge bg-primary fs-6">SQL</span>
-                <span class="badge bg-primary fs-6">Apache Spark</span>
-                <span class="badge bg-primary fs-6">Spark SQL</span>
-                <span class="badge bg-primary fs-6">PySpark</span>
+                <span class="badge bg-info ">Azure Cloud</span> 
+                <span class="badge bg-danger">Azure Databricks</span>
+                <span class="badge bg-info ">Azure Data Factory</span>
+                <span class="badge bg-info ">Azure Data Lake Storage</span>
+                <span class="badge bg-info ">Azure Blob Storage</span>
+                <span class="badge bg-info ">Azure Functions</span>
+                <span class="badge bg-info ">Azure Logic Apps</span>
+                <span class="badge bg-primary">Snowflake</span>
+                <span class="badge bg-primary">Python</span>
+                <span class="badge bg-primary">SQL</span>
+                <span class="badge bg-primary">Apache Spark</span>
+                <span class="badge bg-primary">Spark SQL</span>
+                <span class="badge bg-primary">PySpark</span>
 
                 <!-- Data Analysis -->
-                <span class="badge bg-success fs-6">Root Cause Analysis</span>
-                <span class="badge bg-success fs-6">Data Warehousing</span>
-                <span class="badge bg-success fs-6">Data Modelling</span>
+                <span class="badge bg-success">Root Cause Analysis</span>
+                <span class="badge bg-success">Data Warehousing</span>
+                <span class="badge bg-success">Data Modelling</span>
 
                 <!-- AI/ML Tools -->
-                <span class="badge bg-warning text-dark fs-6">Retrieved Augmented Generation</span>
-                <span class="badge bg-warning text-dark fs-6">Prompt Engineering</span>
+                <span class="badge bg-warning text-dark">Retrieved Augmented Generation</span>
+                <span class="badge bg-warning text-dark">Prompt Engineering</span>
 
                 <!-- Version Control -->
-                <span class="badge bg-secondary fs-6">Git</span>
-                <span class="badge bg-secondary fs-6">Git Strategy </span>
+                <span class="badge bg-secondary">Git</span>
+                <span class="badge bg-secondary">Git Strategy </span>
   <br><br>
               <h5 class="text-primary">Situation</h5>
               <p>
@@ -415,52 +361,165 @@
         <div class="accordion-item bg-dark text-light border-primary">
           <h2 class="accordion-header" id="headingThree">
             <button class="accordion-button bg-dark text-light collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-              Interactive Document Querying and Analysis System using LLMs
-              <span class="ms-auto"></span>
+              AI-Powered Customer Insights Platform
             </button>
           </h2>
           <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#projectsAccordion">
             <div class="accordion-body">
-              <h4 class="card-title text-center">Interactive Document Querying and Analysis System using LLMs</h4>
               <h5 class="text-primary">Skills</h5>
-              <span class="badge bg-info fs-6">Google Gemini</span>
-              <span class="badge bg-warning text-dark fs-6">Gen AI</span>
-              <span class="badge bg-primary fs-6">Python</span>
-              <span class="badge bg-primary fs-6">LangChain</span>
-              <span class="badge bg-success fs-6">Streamlit</span>
-              <span class="badge bg-secondary fs-6">Vector Databases [Faiss]</span>
+              <span class="badge bg-info">Azure Cloud</span>
+              <span class="badge bg-warning text-dark">Gen AI</span>
+              <span class="badge bg-primary">Python</span>
+              <span class="badge bg-primary">SQL</span>
               <br><br>
               <h5 class="text-primary">Situation</h5>
-              <p>
-                Organizations dealing with vast amounts of unstructured documents often struggle with efficient querying and retrieval. Traditional search mechanisms are limited in understanding contextual relevance, leading to inefficient document interaction.
-              </p>
+              <p>Developed an AI-powered platform for analyzing customer behavior...</p>
               <h5 class="text-primary">Task</h5>
-              <p>
-                The goal was to develop an end-to-end interactive document querying system that enables users to extract meaningful insights from multi-type documents (PDFs, text, etc.) using LLMs. The system needed to support natural language queries, provide context-aware responses, and ensure scalability for enterprise use cases.
-              </p>
+              <p>My role was to design and implement a scalable solution...</p>
               <h5 class="text-primary">Action</h5>
               <ul>
-                <li>Designed and implemented the solution using Google Gemini Pro as the foundational LLM for query processing.</li>
-                <li>Developed an advanced vector embedding pipeline using vector databases and embeddings to enhance document retrieval accuracy.</li>
-                <li>Built the frontend using Streamlit for an interactive and user-friendly interface.</li>
-                <li>Established a modular Python-based backend for seamless integration of document processing and AI-driven querying.</li>
-                <li>Integrated a conversational AI framework to generate structured, contextual responses, improving user interaction with documents.</li>
+                <li>Built predictive models using machine learning...</li>
+                <li>Integrated data from multiple sources...</li>
               </ul>
               <h5 class="text-primary">Result</h5>
               <ul>
-                <li>Successfully automated document querying and analysis, reducing the time required for information retrieval by over 60%.</li>
-                <li>Enhanced accuracy and contextual relevance of search results, significantly improving user experience.</li>
-                <li>Built a scalable and reusable LLM-powered document interaction system, demonstrating expertise in generative AI, database management, and NLP-driven search.</li>
+                <li>Increased customer retention by 20%...</li>
+                <li>Improved marketing campaign efficiency...</li>
               </ul>
-              <div class="mt-3 text-center">
-                <a href="https://github.com/AjayAJ2000/Interactive_document_querying_system_using_llms" class="btn btn-outline-primary border border-3 border-primary">
-                  <i class="fa-brands fa-github"></i> View it on Github
-                </a>
-              </div>
             </div>
           </div>
         </div>
-      </div></div>
+      </div>
+    </section></div>
+    <section id="projects" class="mb-5">
+      <h2 class="mb-3 text-center"><i class="fa-solid fa-project-diagram"></i> Projects</h2>
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-6 mb-3">
+          <div class="card bg-dark text-light border-primary">
+            <div class="card-body">
+              <h4 class="card-title text-center">InspiroGene Product - Data &amp; Platform Engineering</h4>
+              <h5 class="text-primary">Skills</h5>
+              <!-- Data Engineering -->
+              <span class="badge bg-info ">Azure Cloud</span> 
+              <span class="badge bg-danger">Azure Databricks</span>
+              <span class="badge bg-info ">Azure Data Factory</span>
+              <span class="badge bg-info ">Azure Data Lake Storage</span>
+              <span class="badge bg-info ">Azure Blob Storage</span>
+              <span class="badge bg-info ">Azure Functions</span>
+              <span class="badge bg-info ">Azure Logic Apps</span>
+              <span class="badge bg-primary">Snowflake</span>
+              <span class="badge bg-primary">Python</span>
+              <span class="badge bg-primary">SQL</span>
+              <span class="badge bg-primary">Apache Spark</span>
+              <span class="badge bg-primary">Spark SQL</span>
+              <span class="badge bg-primary">PySpark</span>
+
+                <!-- Data Analysis -->
+                <span class="badge bg-success">Root Cause Analysis</span>
+                <span class="badge bg-success">Data Warehousing</span>
+                <span class="badge bg-success">Data Modelling</span>
+
+                <!-- AI/ML Tools -->
+                <span class="badge bg-warning text-dark">Retrieved Augmented Generation</span>
+                <span class="badge bg-warning text-dark">Prompt Engineering</span>
+
+                <!-- Version Control -->
+                <span class="badge bg-secondary">Git</span>
+                <span class="badge bg-primary">HIPAA Compliance</span>
+                <span class="badge bg-primary">Data Governance</span>
+                <span class="badge bg-primary">Platform Design</span>
+                <br><br>
+              <h5 class="text-primary">Situation</h5>
+              <p>
+                I worked on the InspiroGene platform by [Undisclosable Client]—a cutting-edge solution that bridges the gap between cell and gene therapy innovation and real-world application. The platform integrates multiple service lines, including Third-Party Logistics (3PL), Specialty Distribution, Specialty Pharmacy, and CGT Patient Hub Services, to support manufacturers and healthcare providers in delivering optimal patient care. With a complex, data-driven environment involving sensitive patient information, a robust and secure data architecture was essential.
+              </p>
+              
+              <h5 class="text-primary">Task</h5>
+              <p>
+                As the Data Engineer, I was responsible for designing and implementing an end-to-end data solution that not only integrated diverse data streams but also ensured compliance with industry regulations. My role focused on creating scalable data pipelines, integrating cross-functional data sources, and developing a HIPAA/PHI-compliant platform to handle high-volume, sensitive data securely while providing real-time insights for operational efficiency and growth.
+              </p>
+              
+              <h5 class="text-primary">Action</h5>
+              <ul>
+                <li><strong>Designed Scalable Data Pipelines:</strong> Developed robust ETL pipelines using modern tools, ensuring smooth ingestion, transformation, and storage of high-volume data from logistics, inventory, and patient management systems.</li>
+                <li><strong>Integrated Cross-Functional Data Sources:</strong> Collaborated with operations, IT, and business teams to map data requirements and integrate disparate systems into a cohesive data architecture.</li>
+                <li><strong>Enhanced Data Quality and Real-Time Insights:</strong> Implemented automated data quality checks and real-time dashboards, enabling stakeholders to access actionable insights for optimizing supply chain processes.</li>
+                <li><strong>Platform Design for Scalability &amp; Security:</strong> Spearheaded the design of a modular, secure platform optimized for scalability, fault tolerance, and robust performance.</li>
+                <li><strong>Implemented HIPAA/PHI Compliance:</strong> Developed and enforced data governance policies—including encryption, role-based access, continuous monitoring, and audit logging—to safeguard sensitive data and meet regulatory standards.</li>
+              </ul>
+              
+              <h5 class="text-primary">Result</h5>
+              <ul>
+                <li><strong>Operational Efficiency:</strong> Streamlined processes and improved data visibility resulted in a significant reduction in errors and processing delays.</li>
+                <li><strong>Improved Decision-Making:</strong> Real-time analytics empowered stakeholders with reliable insights, enabling accurate forecasting and proactive optimization.</li>
+                <li><strong>Enhanced Security &amp; Compliance:</strong> The secure, HIPAA/PHI-compliant design bolstered stakeholder confidence and minimized risk.</li>
+                <li><strong>Business Growth:</strong> Timely data delivery and proactive supply chain management contributed directly to increased growth and profit margins.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-12 col-md-6 mb-3">
+          <div class="card bg-dark text-light border-primary">
+            <div class="card-body">
+              <h4 class="card-title text-center">Financial Planning &amp; Analysis - Data and Gen AI Engineering</h4>
+              <h5 class="text-primary">Skills</h5>
+              <!-- Data Engineering -->
+                <span class="badge bg-info ">Azure Cloud</span> 
+                <span class="badge bg-danger">Azure Databricks</span>
+                <span class="badge bg-info ">Azure Data Factory</span>
+                <span class="badge bg-info ">Azure Data Lake Storage</span>
+                <span class="badge bg-info ">Azure Blob Storage</span>
+                <span class="badge bg-info ">Azure Functions</span>
+                <span class="badge bg-info ">Azure Logic Apps</span>
+                <span class="badge bg-primary">Snowflake</span>
+                <span class="badge bg-primary">Python</span>
+                <span class="badge bg-primary">SQL</span>
+                <span class="badge bg-primary">Apache Spark</span>
+                <span class="badge bg-primary">Spark SQL</span>
+                <span class="badge bg-primary">PySpark</span>
+
+                <!-- Data Analysis -->
+                <span class="badge bg-success">Root Cause Analysis</span>
+                <span class="badge bg-success">Data Warehousing</span>
+                <span class="badge bg-success">Data Modelling</span>
+
+                <!-- AI/ML Tools -->
+                <span class="badge bg-warning text-dark">Retrieved Augmented Generation</span>
+                <span class="badge bg-warning text-dark">Prompt Engineering</span>
+
+                <!-- Version Control -->
+                <span class="badge bg-secondary">Git</span>
+                <span class="badge bg-secondary">Git Strategy </span>
+  <br><br>
+              <h5 class="text-primary">Situation</h5>
+              <p>
+                Our client, operating in the healthcare sector, required a comprehensive Financial Planning and Analysis (FP&amp;A) solution to enhance financial reporting, operational efficiency, and strategic decision-making. The existing systems were fragmented, leading to delays and inaccuracies in financial reporting, particularly across key areas such as Community Pharma and Health (CPH), Group Purchasing Organizations (GPOs), and Sales Operations.
+              </p>
+              
+              <h5 class="text-primary">Task</h5>
+              <p>
+                As the Data Engineer, I was tasked with designing and implementing an integrated data infrastructure that would facilitate timely and accurate financial reporting. This included developing interactive dashboards for CPH, GPOs, and Sales Operations to provide real-time insights and support data-driven decisions.
+              </p>
+              
+              <h5 class="text-primary">Action</h5>
+              <ul>
+                <li><strong>Designed Scalable Data Infrastructure:</strong> Utilized Azure Data Factory, Azure Databricks, Apache Spark, and Snowflake to create robust ETL pipelines and a centralized data warehouse, ensuring efficient data ingestion, transformation, and storage for FP&amp;A activities.</li>
+                <li><strong>Developed Interactive Dashboards:</strong> Leveraged data visualization tools to design dashboards that provided real-time insights into financial metrics, operational performance, and KPIs for CPH, GPOs, and Sales Operations, enabling prompt monitoring and decision-making.</li>
+                <li><strong>Engineered Document Chunking Solution:</strong> Implemented a document chunking solution using LLMs and Vector Databases, enhancing data processing efficiency by 40% by streamlining the handling of large documents and unstructured data.</li>
+              </ul>
+              
+              <h5 class="text-primary">Result</h5>
+              <ul>
+                <li><strong>Enhanced Financial Reporting:</strong> The integrated data infrastructure and dashboards led to timely and accurate financial reports, improving transparency and strategic planning.</li>
+                <li><strong>Operational Efficiency:</strong> Streamlined data processes and the document chunking solution resulted in a 40% improvement in data processing efficiency.</li>
+                <li><strong>Improved Decision-Making:</strong> Real-time access to financial and operational data empowered stakeholders to make data-driven decisions, optimizing performance across CPH, GPOs, and Sales Operations.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+      </div>
     </section>
 
     <!-- Certifications Section -->
@@ -533,7 +592,7 @@
   </div>
   <div class="col-md-3 text-center mb-4">
     <a href="https://google.accredible.com/cea35637-2f84-45fd-bda5-8f0627fda3d5#acc.cafCq4S8" target="_blank">
-      <img src="https://templates.images.credential.net/16590187933301617801540872729153.png" alt="Google Cloud Certified - Associate Cloud Engineer" class="img-fluid" style="max-width:200px;">
+      <img src="https://templates.images.credential.net/16590187933301617801540872729153.png" alt="Google Cloud Certified &amp; Associate Cloud Engineer" class="img-fluid" style="max-width:200px;">
     </a>
     <p>Google Cloud Certified - Associate Cloud Engineer</p>
   </div>
@@ -605,7 +664,12 @@
             <p>WhatsApp</p>
           </a>
         </div>
-
+        <div class="col-6 col-md-2 mb-3">
+          <a href="tel:+918220937538" class="text-decoration-none text-primary">
+            <i class="fa-solid fa-phone fa-2x"></i>
+            <p>Phone</p>
+          </a>
+        </div>
       </div>
     </section>
   </main>
@@ -637,77 +701,16 @@
 
       // Theme toggle logic
       const themeToggle = document.getElementById('theme-toggle');
-      const body = document.body;
-      const navbar = document.querySelector('.navbar');
-      const cards = document.querySelectorAll('.card');
-      const accordionItems = document.querySelectorAll('.accordion-item');
-      const accordionButtons = document.querySelectorAll('.accordion-button');
-      const accordions = document.querySelectorAll('.accordion');
-      const awardCards = document.querySelectorAll('.award-card');
-      const textElements = document.querySelectorAll('.text-light, .text-dark');
-
-      const updateTheme = (isDarkMode) => {
-        if (isDarkMode) {
-          body.classList.add('bg-dark', 'text-light');
-          body.classList.remove('bg-light', 'text-dark');
-          navbar.classList.add('navbar-dark', 'bg-dark');
-          navbar.classList.remove('navbar-light', 'bg-light');
-          themeToggle.innerHTML = '<i class="fa-solid fa-sun"></i>';
-          cards.forEach(card => card.classList.replace('bg-light', 'bg-dark'));
-          accordionItems.forEach(item => {
-            item.classList.replace('bg-light', 'bg-dark');
-            item.classList.replace('text-dark', 'text-light');
-          });
-          accordionButtons.forEach(button => {
-            button.classList.replace('bg-light', 'bg-dark');
-            button.classList.replace('text-dark', 'text-light');
-          });
-          accordions.forEach(accordion => accordion.classList.replace('bg-light', 'bg-dark'));
-          awardCards.forEach(card => card.classList.replace('bg-light', 'bg-dark'));
-          textElements.forEach(el => {
-            el.classList.remove('text-dark');
-            el.classList.add('text-light');
-          });
-        } else {
-          body.classList.remove('bg-dark', 'text-light');
-          body.classList.add('bg-light', 'text-dark');
-          navbar.classList.remove('navbar-dark', 'bg-dark');
-          navbar.classList.add('navbar-light', 'bg-light');
-          themeToggle.innerHTML = '<i class="fa-solid fa-moon"></i>';
-          cards.forEach(card => card.classList.replace('bg-dark', 'bg-light'));
-          accordionItems.forEach(item => {
-            item.classList.replace('bg-dark', 'bg-light');
-            item.classList.replace('text-light', 'text-dark');
-          });
-          accordionButtons.forEach(button => {
-            button.classList.replace('bg-dark', 'bg-light');
-            button.classList.replace('text-light', 'text-dark');
-          });
-          accordions.forEach(accordion => accordion.classList.replace('bg-dark', 'bg-light'));
-          awardCards.forEach(card => card.classList.replace('bg-dark', 'bg-light'));
-          textElements.forEach(el => {
-            el.classList.remove('text-light');
-            el.classList.add('text-dark');
-          });
-        }
-      };
-
       themeToggle.addEventListener('click', () => {
-        const isDarkMode = body.classList.contains('bg-dark');
-        updateTheme(!isDarkMode);
-      });
-
-      // Update accordion toggle icons
-      accordionButtons.forEach(button => {
-        button.addEventListener('click', () => {
-          const icon = button.querySelector('i');
-          const isExpanded = button.getAttribute('aria-expanded') === 'true'; // Check expanded state
-          if (icon) {
-            icon.classList.toggle('fa-chevron-down', !isExpanded);
-            icon.classList.toggle('fa-chevron-up', isExpanded);
-            icon.style.filter = 'invert(1)'; // Ensure visibility in both light and dark modes
-          }
-        });
+        if (document.body.classList.contains('bg-dark')) {
+          document.body.classList.remove('bg-dark', 'text-light');
+          document.body.classList.add('bg-light', 'text-dark');
+          themeToggle.innerHTML = '<i class="fa-solid fa-moon"></i>';
+        } else {
+          document.body.classList.remove('bg-light', 'text-dark');
+          document.body.classList.add('bg-dark', 'text-light');
+          themeToggle.innerHTML = '<i class="fa-solid fa-circle-half-stroke"></i>';
+        }
       });
     });
   </script>
