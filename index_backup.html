@@ -1,256 +1,1368 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ajay Jayaraj - Portfolio</title>
-  <link rel="stylesheet" href="styles.css" />
-  <!-- Google Font: Advent Pro (as in the reference) -->
-  <link href="https://fonts.googleapis.com/css2?family=Advent+Pro&display=swap" rel="stylesheet">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Google Font: Advent Pro -->
+  <link href="https://fonts.googleapis.com/css2?family=Kode+Mono&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <!-- Typed.js for tagline animation -->
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-  <!-- Font Awesome for icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" />
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KCZ30BH3SE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-KCZ30BH3SE');
+</script>
+  <style>
+    body {
+      font-family: 'Kode Mono', Arial, sans-serif;
+      scroll-behavior: smooth;
+    }
+    /* Ensure carousel controls are visible in light mode */
+    body.bg-light .carousel-control-prev-icon,
+    body.bg-light .carousel-control-next-icon {
+      filter: invert(1);
+    }
+    /* Global styles for light and dark modes */
+    .bg-dark-mode {
+      background-color: #212529 !important;
+      color: #f8f9fa !important;
+    }
+    .bg-light-mode {
+      background-color: #f8f9fa !important;
+      color: #212529 !important;
+    }
+    .text-dark-mode {
+      color: #f8f9fa !important;
+    }
+    .text-light-mode {
+      color: #212529 !important;
+    }
+    /* Align accordion toggle icons to the right corner */
+    .accordion-button {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .accordion-button i {
+      margin-left: auto;
+      align-self: center; /* Ensure the icon aligns vertically */
+    }
+    /* Ensure accordion toggle icons are visible in dark mode */
+    body.bg-dark .accordion-button i {
+      filter: invert(1);
+    }
+    /* Ensure carousel controls are visible in dark mode */
+    body.bg-dark .carousel-control-prev-icon,
+    body.bg-dark .carousel-control-next-icon {
+      filter: invert(1);
+    }
+    /* Ensure accordion toggle icons are visible in both light and dark modes */
+    .accordion-button i {
+      margin-left: auto;
+      align-self: center; /* Ensure the icon aligns vertically */
+    }
+    body.bg-light .accordion-button i,
+    body.bg-dark .accordion-button i {
+      filter: invert(1); /* Ensure visibility in both modes */
+    }
+    /* Ensure carousel controls are visible in both light and dark modes */
+    body.bg-light .carousel-control-prev-icon,
+    body.bg-light .carousel-control-next-icon,
+    body.bg-dark .carousel-control-prev-icon,
+    body.bg-dark .carousel-control-next-icon {
+      filter: invert(1);
+    }
+
+    /* Medium articles slideshow styles */
+    .medium-slideshow-container {
+      position: relative;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 15px;
+      padding: 20px;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .medium-carousel-item {
+      min-height: 400px;
+      padding: 30px 20px;
+      display: flex !important; /* Add !important */
+      align-items: center;
+      justify-content: center;
+      width: 100%; /* Add this */
+      position: relative; /* Add this */
+    }
+
+    .carousel-item {
+      display: none;
+    }
+    .carousel-item.active {
+      display: flex !important;
+    }
+    
+    .medium-article-card {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 30px;
+      text-align: center;
+      max-width: 700px;
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    .medium-article-card:hover {
+      transform: translateY(-5px);
+      background: rgba(255, 255, 255, 0.15);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    }
+    
+    .medium-article-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #0d6efd, #6610f2);
+    }
+    
+    .medium-article-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+      line-height: 1.3;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    
+    .medium-article-excerpt {
+      font-size: 0.95rem;
+      opacity: 0.8;
+      line-height: 1.5;
+      margin-bottom: 20px;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    
+    .medium-article-meta {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 20px;
+      font-size: 0.8rem;
+      opacity: 0.7;
+      flex-wrap: wrap;
+    }
+    
+    .medium-read-more-btn {
+      background: linear-gradient(45deg, #0d6efd, #6610f2);
+      border: none;
+      padding: 10px 25px;
+      border-radius: 25px;
+      color: white;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.3s ease;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      .medium-carousel-item {
+        padding: 20px 15px;
+        min-height: 350px;
+        display: flex !important; /* Add !important */
+        align-items: center;
+        justify-content: center;
+      }
+      
+      .medium-article-card {
+        padding: 20px 15px;
+      }
+      
+      .medium-article-title {
+        font-size: 1.2rem;
+      }
+      
+      .medium-article-meta {
+        flex-direction: column;
+        gap: 8px;
+      }
+    }
+    
+    .medium-read-more-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(13, 110, 253, 0.4);
+      color: white;
+    }
+    
+    .medium-refresh-btn {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: rgba(13, 110, 253, 0.8);
+      border: none;
+      color: white;
+      padding: 8px 12px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      transition: all 0.3s ease;
+      z-index: 10;
+    }
+    
+    .medium-refresh-btn:hover {
+      background: rgba(13, 110, 253, 1);
+      transform: scale(1.05);
+    }
+    
+    .medium-loading-state, .medium-error-state {
+      text-align: center;
+      padding: 80px 20px;
+      min-height: 400px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .medium-tech-badge {
+      background: rgba(13, 110, 253, 0.2);
+      color: #0d6efd;
+      padding: 4px 10px;
+      border-radius: 15px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      margin: 2px;
+      display: inline-block;
+      border: 1px solid rgba(13, 110, 253, 0.3);
+    }
+    
+    body.bg-light .medium-tech-badge {
+      background: rgba(13, 110, 253, 0.1);
+      color: #0d6efd;
+      border-color: rgba(13, 110, 253, 0.2);
+    }
+    
+    .medium-last-updated {
+      text-align: center;
+      opacity: 0.6;
+      font-size: 0.75rem;
+      margin-top: 10px;
+    }
+    
+    /* Light mode adjustments */
+    body.bg-light .medium-slideshow-container {
+      background: rgba(0, 0, 0, 0.05);
+      border-color: rgba(0, 0, 0, 0.1);
+    }
+    
+    body.bg-light .medium-article-card {
+      background: rgba(0, 0, 0, 0.05);
+      border-color: rgba(0, 0, 0, 0.1);
+    }
+    
+    body.bg-light .medium-article-card:hover {
+      background: rgba(0, 0, 0, 0.1);
+    }
+    
+    @media (max-width: 768px) {
+      .medium-carousel-item {
+        padding: 20px 15px;
+        min-height: 350px;
+      }
+      
+      .medium-article-card {
+        padding: 20px 15px;
+      }
+      
+      .medium-article-title {
+        font-size: 1.2rem;
+      }
+      
+      .medium-article-meta {
+        flex-direction: column;
+        gap: 8px;
+      }
+    }
+  </style>
 </head>
-<body>
-  
-  <!-- STICKY NAVBAR (Following the reference structure) -->
-  <header class="cyberpunk">
-    <nav class="navbar">
-      <div class="nav-brand">AJ</div>
-      <div class="nav-toggle" id="nav-toggle">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
+<body class="bg-dark text-light">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">AJ</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#education"><i class="fa-solid fa-graduation-cap"></i> Education</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills"><i class="fa-solid fa-tools"></i> Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#tech-stack"><i class="fa-solid fa-laptop-code"></i> Tech Stack</a></li>
+          <li class="nav-item"><a class="nav-link" href="#experience"><i class="fa-solid fa-briefcase"></i> Experience</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects"><i class="fa-solid fa-project-diagram"></i> Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#certifications"><i class="fa-solid fa-certificate"></i> Certifications</a></li>
+          <li class="nav-item"><a class="nav-link" href="#awards"><i class="fa-solid fa-trophy"></i> Awards</a></li>
+          <li class="nav-item"><a class="nav-link" href="#blog"><i class="fa-solid fa-blog"></i> Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+        </ul>
       </div>
-      <ul class="nav-list" id="nav-list">
-        <li><a href="#education"><i class="fa-solid fa-graduation-cap"></i> Education</a></li>
-        <li><a href="#skills"><i class="fa-solid fa-tools"></i> Skills</a></li>
-        <li><a href="#tech-stack"><i class="fa-solid fa-laptop-code"></i> Tech Stack</a></li>
-        <li><a href="#experience"><i class="fa-solid fa-briefcase"></i> Experience</a></li>
-        <li><a href="#projects"><i class="fa-solid fa-project-diagram"></i> Projects</a></li>
-        <li><a href="#certifications"><i class="fa-solid fa-certificate"></i> Certifications</a></li>
-        <li><a href="#awards"><i class="fa-solid fa-trophy"></i> Awards</a></li>
-        <li><a href="#blog"><i class="fa-solid fa-blog"></i> Blog</a></li>
-        <li><a href="#contact"><i class="fa-solid fa-envelope"></i> Contact</a></li>
-      </ul>
-    </nav>
-  </header>
-  
-  <!-- FLOATING SHARE PANEL (Single floating button that expands to show social icons) -->
-  <div class="floating-buttons">
-    <button id="theme-toggle" title="Toggle Light/Dark Mode"><i class="fa-solid fa-circle-half-stroke"></i></button>
-    <button id="share-toggle" title="Share"><i class="fa-regular fa-address-card"></i></button>
-    <div class="social-icons" id="social-icons">
-      <a href="mailto:ajaysri2016@gmail.com" title="Email"><i class="fa-solid fa-envelope"></i></a>
-      <a href="https://www.linkedin.com/in/ajayj2000/" title="LinkedIn" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-      <a href="https://github.com/AjayAJ2000" title="GitHub" target="_blank"><i class="fa-brands fa-github"></i></a>
-      <a href="https://www.instagram.com/ajay.jayaraj.04/" title="Instagram" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-      <a href="https://wa.me/+918220937538" title="WhatsApp" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
-      <a href="tel:+918220937538" title="Phone"><i class="fa-solid fa-phone"></i></a>
     </div>
+  </nav>
+
+  <!-- Floating Buttons: Vertical stack on the right side -->
+  <div class="d-flex flex-column gap-3 position-fixed top-50 end-0 translate-middle-y me-3" style="z-index: 1050;">
+    <!-- Share button with dropdown -->
+    <div class="btn-group">
+      <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+        <i class="fa-solid fa-share-nodes"></i>
+      </button>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="mailto:ajaysri2016@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a></li>
+        <li><a class="dropdown-item" href="https://www.linkedin.com/in/ajayj2000/" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a></li>
+        <li><a class="dropdown-item" href="https://github.com/AjayAJ2000" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a></li>
+        <li><a class="dropdown-item" href="https://www.instagram.com/ajay.jayaraj.04/" target="_blank"><i class="fa-brands fa-instagram"></i> Instagram</a></li>
+      </ul>
+    </div>
+    <!-- Theme Toggle Button -->
+    <button id="theme-toggle" class="btn btn-secondary">
+      <i class="fa-solid fa-circle-half-stroke"></i>
+    </button>
   </div>
-  
-  <!-- HERO SECTION -->
-  <section class="hero cyberpunk">
-    <div class="hero-container">
-      <div class="hero-image">
-        <img src="images/profile.png" alt="Photo of Ajay" />
-      </div>
-      <div class="hero-text">
-        <h1>Hey, I'm <span class="highlight">Ajay Jayaraj</span></h1>
-        <p id="typed-text" class="typed-text"></p>
-        <div class="hero-btn-group">
-          <a href="#contact" class="btn"><i class="fa-solid fa-envelope"></i> Get In Touch</a>
-          <a href="documents/Ajay Jayaraj.pdf" class="btn download-btn" download><i class="fa-solid fa-download"></i> Download Resume</a>
+
+  <!-- Hero Section -->
+  <section class="py-5 mt-5" id="hero">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-5 text-center">
+          <img src="images/profile.png" alt="Photo of Ajay" class="img-fluid rounded w-85 mx-auto d-block">
+        </div>
+        <div class="col-md-7">
+          <h1 class="text-center">Hey, I'm <span class="text-primary"><b>Ajay Jayaraj</b></span></h1>
+          <p id="typed-text" class="fs-4 text-center"></p>
+          <div class="mt-3 text-center">
+            <a href="#contact" class="btn btn-primary me-2"><i class="fa-solid fa-envelope"></i> Get In Touch</a>
+            <a href="documents/Ajay Jayaraj.pdf" class="btn btn-outline-primary" download><i class="fa-solid fa-download"></i> Download Resume</a>
+          </div>
         </div>
       </div>
     </div>
-    <!-- Wave Divider... -->
   </section>
-  
-  <!-- MAIN CONTENT -->
-  <main class="cyberpunk">
+
+  <!-- Main Content -->
+  <main class="container my-5">
     <!-- Education Section -->
-    <section id="education">
-      <h2><i class="fa-solid fa-graduation-cap"></i> Education</h2>
-      <p>Bachelor of Technology, SASTRA UNIVERSITY <br> Jun 2018 - Apr 2022</p>
+    <section id="education" class="mb-5">
+      <h2 class="mb-3 text-center"><i class="fa-solid fa-graduation-cap"></i> Education</h2>
+      <p class="text-center">Bachelor of Technology, SASTRA UNIVERSITY<br>Jun 2018 - Apr 2022</p>
     </section>
-    
-    <!-- Skills Section -->
-    <section id="skills">
-      <h2><i class="fa-solid fa-tools"></i> Skills</h2>
-      <ul>
-        <li><strong><i class="fa-solid fa-database"></i>&emsp;Data Engineering:</strong> <i class="fa-brands fa-microsoft"></i>&emsp;Azure Databricks, Azure Data Factory, Azure Data Lake Storage, Azure Blob Storage, Azure Functions, Azure Logic Apps, Snowflake, Python, SQL, Apache Spark (Spark SQL, PySpark)</li>
-        <li><strong><i class="fa-solid fa-chart-line"></i>&emsp;Data Analysis:</strong> &emsp;Root Cause Analysis, Data Warehousing, Data Modelling</li>
-        <li><strong><i class="fa-solid fa-robot"></i>&emsp;AI/ML Tools:</strong> &emsp;Retrieved Augmented Generation, Prompt Engineering</li>
-        <li><strong><i class="fa-brands fa-git-alt"></i>&emsp;Version Control:</strong> &emsp;Git</li>
-      </ul>
+
+    <!-- Skills Section (Grid) -->
+    <section id="skills" class="mb-5">
+      <h2 class="mb-3 text-center"><i class="fa-solid fa-tools"></i> Skills</h2>
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-4 mb-3">
+          <div class="p-3 bg-secondary bg-opacity-25 rounded">
+            <strong><i class="fa-solid fa-database"></i> Data Engineering:</strong><br>
+            </i> 
+            <span class="badge bg-info fs-6"><i class="fa-brands fa-microsoft"></i> Azure Cloud</span> 
+            <span class="badge bg-danger fs-6">Azure Databricks</span>
+            <span class="badge bg-info fs-6">Azure Data Factory</span>
+            <span class="badge bg-info fs-6">Azure Data Lake Storage</span>
+            <span class="badge bg-info fs-6">Azure Blob Storage</span>
+            <span class="badge bg-info fs-6">Azure Functions</span>
+            <span class="badge bg-info fs-6">Azure Logic Apps</span>
+            <span class="badge bg-primary fs-6">Snowflake</span>
+            <span class="badge bg-success fs-6">Python</span>
+            <span class="badge bg-success fs-6">SQL</span>
+            <span class="badge bg-danger fs-6">Apache Spark</span>
+            <span class="badge bg-danger fs-6">Spark SQL</span>
+            <span class="badge bg-danger fs-6">PySpark</span>
+          </div>
+        </div>
+        <div class="col-12 col-md-4 mb-3">
+          <div class="p-3 bg-secondary bg-opacity-25 rounded">
+            <strong><i class="fa-solid fa-chart-line"></i> Data Analysis:</strong><br>
+            <span class="badge bg-success fs-6">Root Cause Analysis</span>
+            <span class="badge bg-success fs-6">Data Warehousing</span>
+            <span class="badge bg-success fs-6">Data Modelling</span>
+          </div>
+        </div>
+        <div class="col-12 col-md-4 mb-3">
+          <div class="p-3 bg-secondary bg-opacity-25 rounded">
+            <strong><i class="fa-solid fa-robot"></i> AI/ML Tools:</strong><br>
+            <span class="badge bg-warning text-dark fs-6">Retrieved Augmented Generation</span>
+            <span class="badge bg-warning text-dark fs-6">Prompt Engineering</span>
+          </div>
+        </div>
+        <div class="col-12 col-md-4 mb-3">
+          <div class="p-3 bg-secondary bg-opacity-25 rounded">
+            <strong><i class="fa-brands fa-git-alt"></i> Version Control:</strong><br>
+            <span class="badge bg-secondary fs-6">Git</span>
+            <span class="badge bg-secondary fs-6">GitHub</span>
+          </div>
+        </div>
+      </div>
     </section>
-    
-    <!-- Tech Stack Section -->
-    <section id="tech-stack">
-      <h2><i class="fa-solid fa-laptop-code"></i> Tech Stack</h2>
-      <div class="tech-logos">
-        <div class="tech-item">
-          <img class="tech-img" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="Microsoft Azure" title="Microsoft Azure" data-light="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" data-dark="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original-dark.svg">
+
+    <!-- Tech Stack Section (Centered Grid) -->
+    <section id="tech-stack" class="mb-5">
+      <h2 class="mb-3 text-center"><i class="fa-solid fa-laptop-code"></i> Tech Stack</h2>
+      <div class="row justify-content-center">
+        <div class="col-6 col-md-3 mb-4 text-center">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="Microsoft Azure" class="img-fluid" style="max-width:100px;">
           <p>Azure</p>
         </div>
-        <div class="tech-item">
-          <img class="tech-img" src="https://cdn.brandfetch.io/idSUrLOWbH/idOSUN2QlG.svg?c=1dxbfHSJFAPEGdCLU4o5B" alt="Azure Databricks" title="Azure Databricks" data-light="https://cdn.brandfetch.io/idSUrLOWbH/idOSUN2QlG.svg?c=1dxbfHSJFAPEGdCLU4o5B" data-dark="https://cdn.brandfetch.io/idSUrLOWbH/idOSUN2QlG-dark.svg?c=1dxbfHSJFAPEGdCLU4o5B">
+        <div class="col-6 col-md-3 mb-4 text-center">
+          <img src="https://cdn.brandfetch.io/idSUrLOWbH/idOSUN2QlG.svg?c=1dxbfHSJFAPEGdCLU4o5B" alt="Azure Databricks" class="img-fluid" style="max-width:100px;">
           <p>Databricks</p>
         </div>
-        <div class="tech-item">
-          <img class="tech-img" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" title="Python" data-light="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" data-dark="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original-dark.svg">
+        <div class="col-6 col-md-3 mb-4 text-center">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="img-fluid" style="max-width:100px;">
           <p>Python</p>
         </div>
-        <div class="tech-item">
-          <img class="tech-img" src="https://upload.wikimedia.org/wikipedia/commons/f/f3/Apache_Spark_logo.svg" alt="Apache Spark" title="Apache Spark" data-light="https://upload.wikimedia.org/wikipedia/commons/f/f3/Apache_Spark_logo.svg" data-dark="https://upload.wikimedia.org/wikipedia/commons/f/f3/Apache_Spark_logo-dark.svg">
+        <div class="col-6 col-md-3 mb-4 text-center">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/f/f3/Apache_Spark_logo.svg" alt="Apache Spark" class="img-fluid" style="max-width:100px;">
           <p>Spark</p>
         </div>
-        <div class="tech-item">
-          <img class="tech-img" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" title="Git" data-light="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" data-dark="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original-dark.svg">
+        <div class="col-6 col-md-3 mb-4 text-center">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" class="img-fluid" style="max-width:100px;">
           <p>Git</p>
         </div>
-        <div class="tech-item">
-          <img class="tech-img" src="https://cdn.brandfetch.io/idJz-fGD_q/w/400/h/400/theme/dark/icon.png?c=1dxbfHSJFAPEGdCLU4o5B" alt="Snowflake" title="Snowflake" data-light="https://cdn.brandfetch.io/idJz-fGD_q/w/400/h/400/theme/light/icon.png?c=1dxbfHSJFAPEGdCLU4o5B" data-dark="https://cdn.brandfetch.io/idJz-fGD_q/w/400/h/400/theme/dark/icon.png?c=1dxbfHSJFAPEGdCLU4o5B">
+        <div class="col-6 col-md-3 mb-4 text-center">
+          <img src="https://cdn.brandfetch.io/idJz-fGD_q/w/400/h/400/theme/dark/icon.png?c=1dxbfHSJFAPEGdCLU4o5B" alt="Snowflake" class="img-fluid" style="max-width:100px;">
           <p>Snowflake</p>
         </div>
-        <div class="tech-item">
-          <img class="tech-img" src="https://static.vecteezy.com/system/resources/thumbnails/036/105/045/small_2x/artificial-intelligence-ai-processor-chip-icon-symbol-for-graphic-design-logo-web-site-social-media-png.png" alt="AI/ML" title="AI/ML" data-light="https://static.vecteezy.com/system/resources/thumbnails/036/105/045/small_2x/artificial-intelligence-ai-processor-chip-icon-symbol-for-graphic-design-logo-web-site-social-media-png.png" data-dark="https://static.vecteezy.com/system/resources/thumbnails/036/105/045/small_2x/artificial-intelligence-ai-processor-chip-icon-symbol-for-graphic-design-logo-web-site-social-media-png-dark.png">
+        <div class="col-6 col-md-3 mb-4 text-center">
+          <img src="https://static.vecteezy.com/system/resources/thumbnails/036/105/045/small_2x/artificial-intelligence-ai-processor-chip-icon-symbol-for-graphic-design-logo-web-site-social-media-png.png" alt="AI/ML" class="img-fluid" style="max-width:100px;">
           <p>Gen AI/LLMs</p>
         </div>
       </div>
     </section>
-    <br>
-    <br>
-    <!-- Experience Section -->
-    <section id="experience">
-      <h2><i class="fa-solid fa-briefcase"></i> Experience</h2>
-      <h3>Data Engineer, ZS Associates</h3>
-      <p>SEP 2022 - PRESENT</p>
-      <ul>
-        <li>Developed and managed automated data workflows using Azure Databricks, ensuring secure and efficient data delivery through Azure Data Factory. This involved creating robust pipelines that handled large volumes of data seamlessly.</li>
-        <li>Established comprehensive data governance protocols within Azure Databricks, achieving 100% compliance with PHI/HIPAA standards. This ensured that all data handling processes adhered to strict privacy and security regulations.</li>
-        <li>Architected complex data pipelines using Azure Data Factory to ingest, transform, and process provider and pharmaceutical data, significantly optimizing processing times within Snowflake.</li>
-        <li>Programmed intricate SQL queries that powered dashboards for contracts worth $500 million, thereby enhancing operational efficiency and providing critical insights for decision-making. </li>
-        <li>Created an end-to-end data and platform architecture utilizing Azure and Snowflake for critical projects, ensuring scalability, reliability, and performance.</li>
-        <li>Developed scalable frameworks that reduced project turnaround time by 40%, enabling faster delivery of data solutions and improving overall project efficiency.</li>
-        <li>Boosted team productivity by training over 50 employees on the latest trends and advancements in artificial intelligence, ensuring the team stayed ahead of industry developments.</li>
-      </ul>
-    </section>
-    
-    <!-- Projects Section -->
-    <section id="projects">
-      <h2><i class="fa-solid fa-project-diagram"></i> Projects</h2>
-      <h3>InspiroGene Product - Data &amp; Platform Engineering</h3>
-      <ul>
-        <li>Optimized the core data pipeline powering the InspiroGene product's analytics dashboard, achieving a 20% speed improvement.</li>
-        <li>Spearheaded platform engineering for near real-time analytics across 5+ service lines.</li>
-      </ul>
-      <h3>Financial Planning and Analysis - Data and Gen AI Engineering</h3>
-      <ul>
-        <li>Designed data infrastructure for 4+ FP&amp;A projects to enable timely financial reporting.</li>
-        <li>Engineered a document chunking solution using LLMs and Vector Databases, improving query efficiency by 40%.</li>
-      </ul>
-    </section>
-    
-    <!-- Certifications Section -->
-    <section id="certifications">
-      <h2><i class="fa-solid fa-certificate"></i> Certifications</h2>
-      <div class="certifications-logos">
-        <div class="certification-item">
-          <a href="https://learn.microsoft.com/en-us/users/ajayj2000-0407/credentials/2317b44b3714ff37" target="_blank">
-            <img src="https://learn.microsoft.com/en-us/media/learn/certification/badges/microsoft-certified-associate-badge.svg" alt="DP-203 Badge" title="Microsoft Certified: Azure Data Engineer Associate - DP-203"/>
-          </a>
-          <p>Azure Data Engineer Associate - DP-203</p>
-        </div>
-        <div class="certification-item">
-          <a href="https://credentials.databricks.com/f7acb3db-f793-4f83-84d3-d0e52b143229" target="_blank">
-            <img src="https://templates.images.credential.net/16875328858623774637935876095299.png" alt="Databricks Accredited Azure Platform Architect" title="Databricks Accredited Azure Platform Architect"/>
-          </a>
-          <p>Databricks Accredited Azure Platform Architect</p>
-        </div>
-        <div class="certification-item">
-          <a href="https://credentials.databricks.com/044a0269-9bb0-46cb-a5fa-3d76ebb6db39#acc.UL8rip1e" target="_blank">
-            <img src="https://templates.images.credential.net/17186544995863741044211341130037.png" alt="Gen AI &amp; LLM on Databricks" title="Gen AI &amp; LLM on Databricks"/>
-          </a>
-          <p>Gen AI & LLM on Databricks</p>
+
+    <!-- Experience Section (Grid Cards) -->
+    <section id="experience" class="mb-5">
+      <h2 class="mb-3 text-center"><i class="fa-solid fa-briefcase"></i> Experience</h2>
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-8 mb-3">
+          <div class="card bg-dark text-light border-primary">
+            <div class="card-body">
+              <!-- Updated title and subtitle -->
+              <h4 class="card-title text-center"><b>ZS Associates | SEP 2022 - PRESENT</b></h4>
+                <!-- Timeline container -->
+                <div class="timeline">
+                
+                <!-- Position 2: Add your previous position here -->
+                <div class="timeline-item mb-4">
+                  <div class="timeline-marker bg-primary"></div>
+                  <div class="timeline-content">
+                  <h5 class="mb-1">Senior Data Engineer<span class="text-muted fs-6">APR 2025 - Present</span></h5>
+                  <p class="card-subtitle mb-2">Client: Fortune 500 Healthcare Provider in US & Canada</p>
+                  <ul>
+                    <li>Created an End-to-End Data & Platform Architecture using Azure cloud and snowflake for data ingestion and data processing for a critical time constraint project.</li>
+                    <li>Recognized for developing scalable and reusable frameworks that address recurring challenges in data engineering projects cutting down 40% of project turnaround time.</li>
+                    <li>Took on project management responsibilities, including creating business presentations, managing delivery timelines, and directly consulting with clients and the onshore team.</li>
+                    <li>Demonstrated leadership skills by mentoring and training junior associates, managing project timelines, coordinating with cross-functional teams, and directly interfacing with clients to ensure timely delivery and alignment with business needs.</li>
+                    <li>Collaborative team player with a strong focus on driving team success through effective communication, attention to detail, and a proactive approach to problem-solving.</li>
+                  </ul>
+                  </div>
+                </div>
+                <!-- Position 1: ZS Associates -->
+                <div class="timeline-item mb-4">
+                  <div class="timeline-marker bg-secondary"></div>
+                  <div class="timeline-content">
+                  <h5 class="mb-1">Data Engineer<span class="text-muted fs-6">| SEP 2022 - APR 2025</span></h5>
+                  <p class="card-subtitle mb-2">Client: Fortune 500 Healthcare Provider in US & Canada</p>
+                  <ul>
+                    <li><strong>Automated Data Workflows:</strong> Developed and managed automated data workflows with Azure Databricks, enabling validated data ingestion from 15+ sources to production environments. Ensured scalable and secure data delivery via Azure Data Factory.</li>
+                    <li><strong>Data Governance &amp; Compliance:</strong> Established and enforced robust data governance and security protocols within Azure Databricks, achieving 100% compliance with PHI/HIPAA regulatory standards.</li>
+                    <li><strong>Pipeline Architecture:</strong> Architected automated data pipelines using Azure Data Factory to ingest and transform provider solutions and pharmaceutical data, optimizing Snowflake for seamless processing.</li>
+                    <li><strong>Advanced SQL &amp; Dashboarding:</strong> Programmed complex, efficient SQL queries powering dashboards that track $500M in contracts, purchasing behaviors, and rebate metrics, thereby enhancing transparency and operational efficiency.</li>
+                    <li><strong>End-to-End Architecture:</strong> Designed an end-to-end data and platform architecture leveraging Azure cloud and Snowflake for critical, time-sensitive projects.</li>
+                    <li><strong>Efficiency Improvements:</strong> Developed scalable, reusable frameworks that reduced project turnaround time by 40%, addressing recurring challenges in data engineering.</li>
+                    <li><strong>Team Training &amp; Innovation:</strong> Trained over 50 employees on cutting-edge AI trends and practical applications, resulting in a 65% improvement in efficiency when tackling daily data and technology challenges.</li>
+                  </ul>
+                  </div>
+                </div>
+                </div>
+                <!-- Timeline styles -->
+                <style>
+                .timeline {
+                  position: relative;
+                  margin-left: 1.5rem;
+                  padding-left: 1.5rem;
+                  border-left: 3px solid #0d6efd;
+                }
+                .timeline-item {
+                  position: relative;
+                }
+                .timeline-marker {
+                  position: absolute;
+                  left: -1.65rem;
+                  top: 0.4rem;
+                  width: 1rem;
+                  height: 1rem;
+                  border-radius: 50%;
+                  border: 2px solid #fff;
+                  box-shadow: 0 0 0 2px #0d6efd;
+                }
+                .timeline-marker.bg-secondary {
+                  box-shadow: 0 0 0 2px #6c757d;
+                }
+                .timeline-content {
+                  margin-bottom: 0.5rem;
+                }
+                </style>
+              <!-- Add border to project links -->
+              
+            </div>
+          </div>
         </div>
       </div>
     </section>
-    <br>
-    <br>
-    <!-- Blog Section -->
-    <section id="blog">
-      <h2><i class="fa-solid fa-blog"></i> Blog</h2>
-      <p>Check out my latest articles on technology, data engineering, and more on my <a href="https://yourtechjournalist.blogspot.com/" target="https://yourtechjournalist.blogspot.com/">blog</a>.</p>
-    </section>
     
 
+    <!-- Projects Section (Grid Cards) -->
+    <section id="projects" class="mb-5">
+      <h2 class="mb-3 text-center"><i class="fa-solid fa-project-diagram"></i> Projects</h2>
+      <div class="card bg-dark text-light border-primary">
+      <div class="accordion" id="projectsAccordion">
+        <!-- Project 1 -->
+        <div class="accordion-item bg-dark text-light border-primary">
+          <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button bg-dark text-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              InspiroGene Product - Data &amp; Platform Engineering
+                <span class="ms-auto d-flex justify-content-end"></span>
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#projectsAccordion">
+            <div class="accordion-body">
+              <h4 class="card-title text-center">InspiroGene Product - Data &amp; Platform Engineering</h4>
+              <h5 class="text-primary">Skills</h5>
+              <!-- Data Engineering -->
+              <span class="badge bg-info  fs-6">Azure Cloud</span> 
+              <span class="badge bg-danger fs-6">Azure Databricks</span>
+              <span class="badge bg-info  fs-6">Azure Data Factory</span>
+              <span class="badge bg-info  fs-6">Azure Data Lake Storage</span>
+              <span class="badge bg-info  fs-6">Azure Blob Storage</span>
+              <span class="badge bg-info  fs-6">Azure Functions</span>
+              <span class="badge bg-info  fs-6">Azure Logic Apps</span>
+              <span class="badge bg-primary fs-6">Snowflake</span>
+              <span class="badge bg-primary fs-6">Python</span>
+              <span class="badge bg-primary fs-6">SQL</span>
+              <span class="badge bg-primary fs-6">Apache Spark</span>
+              <span class="badge bg-primary fs-6">Spark SQL</span>
+              <span class="badge bg-primary fs-6">PySpark</span>
+
+                <!-- Data Analysis -->
+                <span class="badge bg-success fs-6">Root Cause Analysis</span>
+                <span class="badge bg-success fs-6">Data Warehousing</span>
+                <span class="badge bg-success fs-6">Data Modelling</span>
+
+                <!-- AI/ML Tools -->
+                <span class="badge bg-warning text-dark fs-6">Retrieved Augmented Generation</span>
+                <span class="badge bg-warning text-dark fs-6">Prompt Engineering</span>
+
+                <!-- Version Control -->
+                <span class="badge bg-secondary fs-6">Git</span>
+                <span class="badge bg-primary fs-6">HIPAA Compliance</span>
+                <span class="badge bg-primary fs-6">Data Governance</span>
+                <span class="badge bg-primary fs-6">Platform Design</span>
+                <br><br>
+              <h5 class="text-primary">Situation</h5>
+              <p>
+                I worked on the InspiroGene platform by [Undisclosable Client]—a cutting-edge solution that bridges the gap between cell and gene therapy innovation and real-world application. The platform integrates multiple service lines, including Third-Party Logistics (3PL), Specialty Distribution, Specialty Pharmacy, and CGT Patient Hub Services, to support manufacturers and healthcare providers in delivering optimal patient care. With a complex, data-driven environment involving sensitive patient information, a robust and secure data architecture was essential.
+              </p>
+              
+              <h5 class="text-primary">Task</h5>
+              <p>
+                As the Data Engineer, I was responsible for designing and implementing an end-to-end data solution that not only integrated diverse data streams but also ensured compliance with industry regulations. My role focused on creating scalable data pipelines, integrating cross-functional data sources, and developing a HIPAA/PHI-compliant platform to handle high-volume, sensitive data securely while providing real-time insights for operational efficiency and growth.
+              </p>
+              
+              <h5 class="text-primary">Action</h5>
+              <ul>
+                <li><strong>Designed Scalable Data Pipelines:</strong> Developed robust ETL pipelines using modern tools, ensuring smooth ingestion, transformation, and storage of high-volume data from logistics, inventory, and patient management systems.</li>
+                <li><strong>Integrated Cross-Functional Data Sources:</strong> Collaborated with operations, IT, and business teams to map data requirements and integrate disparate systems into a cohesive data architecture.</li>
+                <li><strong>Enhanced Data Quality and Real-Time Insights:</strong> Implemented automated data quality checks and real-time dashboards, enabling stakeholders to access actionable insights for optimizing supply chain processes.</li>
+                <li><strong>Platform Design for Scalability &amp; Security:</strong> Spearheaded the design of a modular, secure platform optimized for scalability, fault tolerance, and robust performance.</li>
+                <li><strong>Implemented HIPAA/PHI Compliance:</strong> Developed and enforced data governance policies—including encryption, role-based access, continuous monitoring, and audit logging—to safeguard sensitive data and meet regulatory standards.</li>
+              </ul>
+              
+              <h5 class="text-primary">Result</h5>
+              <ul>
+                <li><strong>Operational Efficiency:</strong> Streamlined processes and improved data visibility resulted in a significant reduction in errors and processing delays.</li>
+                <li><strong>Improved Decision-Making:</strong> Real-time analytics empowered stakeholders with reliable insights, enabling accurate forecasting and proactive optimization.</li>
+                <li><strong>Enhanced Security &amp; Compliance:</strong> The secure, HIPAA/PHI-compliant design bolstered stakeholder confidence and minimized risk.</li>
+                <li><strong>Business Growth:</strong> Timely data delivery and proactive supply chain management contributed directly to increased growth and profit margins.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="accordion-item bg-dark text-light border-primary">
+          <h2 class="accordion-header" id="headingTwo">
+            <button class="accordion-button bg-dark text-light collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              Financial Planning &amp; Analysis - Data and Gen AI Engineering
+              <span class="ms-auto"></span>
+            </button>
+          </h2>
+          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#projectsAccordion">
+            <div class="accordion-body">
+              <h4 class="card-title text-center">Financial Planning &amp; Analysis - Data and Gen AI Engineering</h4>
+              <h5 class="text-primary">Skills</h5>
+              <!-- Data Engineering -->
+                <span class="badge bg-info fs-6 ">Azure Cloud</span> 
+                <span class="badge bg-danger fs-6">Azure Databricks</span>
+                <span class="badge bg-info fs-6 ">Azure Data Factory</span>
+                <span class="badge bg-info fs-6 ">Azure Data Lake Storage</span>
+                <span class="badge bg-info  fs-6">Azure Blob Storage</span>
+                <span class="badge bg-info  fs-6">Azure Functions</span>
+                <span class="badge bg-info  fs-6">Azure Logic Apps</span>
+                <span class="badge bg-primary fs-6">Snowflake</span>
+                <span class="badge bg-primary fs-6">Python</span>
+                <span class="badge bg-primary fs-6">SQL</span>
+                <span class="badge bg-primary fs-6">Apache Spark</span>
+                <span class="badge bg-primary fs-6">Spark SQL</span>
+                <span class="badge bg-primary fs-6">PySpark</span>
+
+                <!-- Data Analysis -->
+                <span class="badge bg-success fs-6">Root Cause Analysis</span>
+                <span class="badge bg-success fs-6">Data Warehousing</span>
+                <span class="badge bg-success fs-6">Data Modelling</span>
+
+                <!-- AI/ML Tools -->
+                <span class="badge bg-warning text-dark fs-6">Retrieved Augmented Generation</span>
+                <span class="badge bg-warning text-dark fs-6">Prompt Engineering</span>
+
+                <!-- Version Control -->
+                <span class="badge bg-secondary fs-6">Git</span>
+                <span class="badge bg-secondary fs-6">Git Strategy </span>
+  <br><br>
+              <h5 class="text-primary">Situation</h5>
+              <p>
+                Our client, operating in the healthcare sector, required a comprehensive Financial Planning and Analysis (FP&amp;A) solution to enhance financial reporting, operational efficiency, and strategic decision-making. The existing systems were fragmented, leading to delays and inaccuracies in financial reporting, particularly across key areas such as Community Pharma and Health (CPH), Group Purchasing Organizations (GPOs), and Sales Operations.
+              </p>
+              
+              <h5 class="text-primary">Task</h5>
+              <p>
+                As the Data Engineer, I was tasked with designing and implementing an integrated data infrastructure that would facilitate timely and accurate financial reporting. This included developing interactive dashboards for CPH, GPOs, and Sales Operations to provide real-time insights and support data-driven decisions.
+              </p>
+              
+              <h5 class="text-primary">Action</h5>
+              <ul>
+                <li><strong>Designed Scalable Data Infrastructure:</strong> Utilized Azure Data Factory, Azure Databricks, Apache Spark, and Snowflake to create robust ETL pipelines and a centralized data warehouse, ensuring efficient data ingestion, transformation, and storage for FP&amp;A activities.</li>
+                <li><strong>Developed Interactive Dashboards:</strong> Leveraged data visualization tools to design dashboards that provided real-time insights into financial metrics, operational performance, and KPIs for CPH, GPOs, and Sales Operations, enabling prompt monitoring and decision-making.</li>
+                <li><strong>Engineered Document Chunking Solution:</strong> Implemented a document chunking solution using LLMs and Vector Databases, enhancing data processing efficiency by 40% by streamlining the handling of large documents and unstructured data.</li>
+              </ul>
+              
+              <h5 class="text-primary">Result</h5>
+              <ul>
+                <li><strong>Enhanced Financial Reporting:</strong> The integrated data infrastructure and dashboards led to timely and accurate financial reports, improving transparency and strategic planning.</li>
+                <li><strong>Operational Efficiency:</strong> Streamlined data processes and the document chunking solution resulted in a 40% improvement in data processing efficiency.</li>
+                <li><strong>Improved Decision-Making:</strong> Real-time access to financial and operational data empowered stakeholders to make data-driven decisions, optimizing performance across CPH, GPOs, and Sales Operations.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="accordion-item bg-dark text-light border-primary">
+          <h2 class="accordion-header" id="headingThree">
+            <button class="accordion-button bg-dark text-light collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              Interactive Document Querying and Analysis System using LLMs
+              <span class="ms-auto"></span>
+            </button>
+          </h2>
+          <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#projectsAccordion">
+            <div class="accordion-body">
+              <h4 class="card-title text-center">Interactive Document Querying and Analysis System using LLMs</h4>
+              <h5 class="text-primary">Skills</h5>
+              <span class="badge bg-info fs-6">Google Gemini</span>
+              <span class="badge bg-warning text-dark fs-6">Gen AI</span>
+              <span class="badge bg-primary fs-6">Python</span>
+              <span class="badge bg-primary fs-6">LangChain</span>
+              <span class="badge bg-success fs-6">Streamlit</span>
+              <span class="badge bg-secondary fs-6">Vector Databases [Faiss]</span>
+              <br><br>
+              <h5 class="text-primary">Situation</h5>
+              <p>
+                Organizations dealing with vast amounts of unstructured documents often struggle with efficient querying and retrieval. Traditional search mechanisms are limited in understanding contextual relevance, leading to inefficient document interaction.
+              </p>
+              <h5 class="text-primary">Task</h5>
+              <p>
+                The goal was to develop an end-to-end interactive document querying system that enables users to extract meaningful insights from multi-type documents (PDFs, text, etc.) using LLMs. The system needed to support natural language queries, provide context-aware responses, and ensure scalability for enterprise use cases.
+              </p>
+              <h5 class="text-primary">Action</h5>
+              <ul>
+                <li>Designed and implemented the solution using Google Gemini Pro as the foundational LLM for query processing.</li>
+                <li>Developed an advanced vector embedding pipeline using vector databases and embeddings to enhance document retrieval accuracy.</li>
+                <li>Built the frontend using Streamlit for an interactive and user-friendly interface.</li>
+                <li>Established a modular Python-based backend for seamless integration of document processing and AI-driven querying.</li>
+                <li>Integrated a conversational AI framework to generate structured, contextual responses, improving user interaction with documents.</li>
+              </ul>
+              <h5 class="text-primary">Result</h5>
+              <ul>
+                <li>Successfully automated document querying and analysis, reducing the time required for information retrieval by over 60%.</li>
+                <li>Enhanced accuracy and contextual relevance of search results, significantly improving user experience.</li>
+                <li>Built a scalable and reusable LLM-powered document interaction system, demonstrating expertise in generative AI, database management, and NLP-driven search.</li>
+              </ul>
+              <div class="mt-3 text-center">
+                <a href="https://github.com/AjayAJ2000/Interactive_document_querying_system_using_llms" class="btn btn-outline-primary border border-3 border-primary">
+                  <i class="fa-brands fa-github"></i> View it on Github
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="accordion-item bg-dark text-light border-primary">
+          <h2 class="accordion-header" id="headingFour">
+            <button class="accordion-button bg-dark text-light collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+              Neuro Fuzzy Based IOT Assisted Power Management System for Smart Grid with advanced analytics and predictions
+              <span class="ms-auto"></span>
+            </button>
+          </h2>
+          <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#projectsAccordion">
+            <div class="accordion-body">
+              <h4 class="card-title text-center">Neuro Fuzzy Based IOT Assisted Power Management System for Smart Grid with advanced analytics and predictions</h4>
+              <h5 class="text-primary">Skills</h5>
+              <span class="badge bg-info fs-6">IoT</span>
+              <span class="badge bg-warning text-dark fs-6">AI-driven Analytics</span>
+              <span class="badge bg-primary fs-6">Smart Grid Optimization</span>
+              <span class="badge bg-primary fs-6">Python</span>
+              <span class="badge bg-primary fs-6">ThingSpeak</span>
+              <span class="badge bg-primary fs-6">Django</span>
+              <span class="badge bg-primary fs-6">SQL</span>
+              <span class="badge bg-primary fs-6">Full Stack Web Design</span>
+              <br><br>
+              <h5 class="text-primary">Situation</h5>
+              <p>
+                The increasing demand for efficient and intelligent power management in smart grids requires real-time monitoring, optimization, and predictive analytics. Traditional energy management systems lack adaptive decision-making capabilities, leading to inefficiencies in power distribution and consumption.
+              </p>
+              <h5 class="text-primary">Task</h5>
+              <p>
+                The objective was to develop an IoT-assisted power management system that integrates Neuro-Fuzzy Logic (ANFIS) to enhance real-time energy monitoring, decision-making, and optimization.
+              </p>
+              <h5 class="text-primary">Action</h5>
+              <ul>
+                <li>Integrated IoT sensors to collect real-time data on power parameters across different grid stages.</li>
+                <li>Developed a Neuro-Fuzzy Inference System (ANFIS) to adaptively optimize power distribution based on fluctuating demand.</li>
+                <li>Designed an advanced analytics and prediction framework for proactive energy management.</li>
+                <li>Implemented a high-efficiency control mechanism, achieving an operational efficiency of 99.74%.</li>
+                <li>Tested the system across residential energy management, smart home systems, and large-scale grid operations.</li>
+              </ul>
+              <h5 class="text-primary">Result</h5>
+              <ul>
+                <li>Optimized power management, reducing energy wastage and improving grid reliability.</li>
+                <li>Enhanced decision-making capabilities, enabling the smart grid to adapt dynamically to power demands.</li>
+                <li>Achieved an industry-leading 99.74% operational efficiency.</li>
+                <li>Enabled predictive analytics for proactive energy distribution strategies.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 5 -->
+        <div class="accordion-item bg-dark text-light border-primary">
+          <h2 class="accordion-header" id="headingFive">
+            <button class="accordion-button bg-dark text-light collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+              Data Driven Predictive Energy Management and Electricity Consumption Optimization
+              <span class="ms-auto"></span>
+            </button>
+          </h2>
+          <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#projectsAccordion">
+            <div class="accordion-body">
+              <h4 class="card-title text-center">Data Driven Predictive Energy Management and Electricity Consumption Optimization</h4>
+              <h5 class="text-primary">Skills</h5>
+              <span class="badge bg-info fs-6">Django</span>
+              <span class="badge bg-primary fs-6">SQL</span>
+              <span class="badge bg-warning text-dark fs-6">Predictive Modeling</span>
+              <span class="badge bg-success fs-6">Energy Optimization</span>
+              <span class="badge bg-primary fs-6">Python</span>
+              <span class="badge bg-primary fs-6">ThingSpeak</span>
+              <span class="badge bg-primary fs-6">Django</span>
+              <span class="badge bg-primary fs-6">SQL</span>
+              <span class="badge bg-primary fs-6">Full Stack Web Design</span>
+              <br><br>
+              <h5 class="text-primary">Situation</h5>
+              <p>
+                Energy consumption monitoring and management have traditionally been inefficient due to a lack of real-time insights, manual billing errors, and limited predictive analytics.
+              </p>
+              <h5 class="text-primary">Task</h5>
+              <p>
+                The objective was to develop a real-time predictive energy management system that integrates hardware (Arduino UNO) with a Django-based web application.
+              </p>
+              <h5 class="text-primary">Action</h5>
+              <ul>
+                <li>Developed a Django-based web platform to display real-time electricity consumption data collected from Arduino UNO hardware.</li>
+                <li>Implemented SQL databases to store historical energy data for trend analysis and predictive modeling.</li>
+                <li>Designed an automated billing system to reduce manual calculation errors.</li>
+                <li>Integrated advanced analytics to detect peak consumption periods and suggest optimization strategies.</li>
+                <li>Created interactive dashboards using Bootstrap for real-time insights and detailed energy reports.</li>
+                <li>Introduced anomaly detection algorithms to identify unusual consumption patterns.</li>
+              </ul>
+              <h5 class="text-primary">Result</h5>
+              <ul>
+                <li>Increased energy efficiency, allowing users to optimize consumption based on real-time data.</li>
+                <li>Reduced billing errors, ensuring timely and accurate invoices.</li>
+                <li>Enhanced decision-making capabilities for cost-saving measures and renewable energy exploration.</li>
+                <li>Enabled predictive maintenance, minimizing unexpected power failures.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="mb-5">
+      <h2 class="mb-3 text-center"><i class="fa-solid fa-certificate"></i> Certifications</h2>
+      <!-- Mobile View: Carousel (visible only below md) -->
+      <div id="certCarousel" class="carousel slide d-md-none" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active text-center">
+            <a href="https://learn.microsoft.com/en-us/users/ajayj2000-0407/credentials/2317b44b3714ff37" target="_blank">
+              <img src="images/azure-data-engineer-associate.png" alt="Azure Data Engineer Associate - DP-203" class="d-block mx-auto" style="max-width:200px;">
+            </a>
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Azure Data Engineer Associate - DP-203</h5>
+            </div>
+          </div>
+          <div class="carousel-item active text-center">
+            <a href="https://learn.microsoft.com/en-us/users/ajayj2000-0407/credentials/dc414fdef18fe56a" target="_blank">
+              <img src="images/ai_engineer_logo.png" alt="Azure Data Engineer Associate - DP-203" class="d-block mx-auto" style="max-width:200px;">
+            </a>
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Azure AI Engineer Associate - AI-104</h5>
+            </div>
+          </div>
+          <div class="carousel-item text-center">
+            <a href="https://credentials.databricks.com/f7acb3db-f793-4f83-84d3-d0e52b143229" target="_blank">
+              <img src="images/databricks ap.png" alt="Databricks Accredited Azure Platform Architect" class="d-block mx-auto" style="max-width:200px;">
+            </a>
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Databricks Accredited Azure Platform Architect</h5>
+            </div>
+          </div>
+          <div class="carousel-item text-center">
+            <a href="https://credentials.databricks.com/044a0269-9bb0-46cb-a5fa-3d76ebb6db39#acc.UL8rip1e" target="_blank">
+              <img src="images/genai llm dbrx.png" alt="Gen AI &amp; LLM on Databricks" class="d-block mx-auto" style="max-width:200px;">
+            </a>
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Gen AI &amp; LLM on Databricks</h5>
+            </div>
+          </div>
+          <div class="carousel-item text-center">
+            <a href="https://achieve.snowflake.com/a41c4026-1b25-4967-828a-05534829c9d9" target="_blank">
+              <img src="images/sf_asso_pltfm.png" alt="Snowflake Associate Platform" class="d-block mx-auto" style="max-width:200px;">
+            </a>
+            <div class="carousel-caption d-none d-md-block">
+              <h5>SnowPro Associate: Platform Certification</h5>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#certCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#certCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+      <!-- Desktop View: Grid (visible on md and above) -->
+<div class="row d-none d-md-flex justify-content-center">
+  <div class="col-md-3 text-center mb-4">
+    <a href="https://learn.microsoft.com/en-us/users/ajayj2000-0407/credentials/2317b44b3714ff37" target="_blank">
+      <img src="images/azure-data-engineer-associate.png" alt="Azure Data Engineer Associate - DP-203" class="img-fluid" style="max-width:200px; height:200px; object-fit:contain;">
+    </a>
+    <p>Azure Data Engineer Associate - DP-203</p>
+  </div>
+  <div class="col-md-3 text-center mb-4">
+    <a href="https://learn.microsoft.com/en-us/users/ajayj2000-0407/credentials/dc414fdef18fe56a" target="_blank">
+      <img src="images/ai_engineer_logo.png" alt="Azure Data Engineer Associate - DP-203" class="img-fluid" style="max-width:200px; height:200px; object-fit:contain;">
+    </a>
+    <p>Azure AI Engineer Associate - AI-104</p>
+  </div>
+  <div class="col-md-3 text-center mb-4">
+    <a href="https://credentials.databricks.com/f7acb3db-f793-4f83-84d3-d0e52b143229" target="_blank">
+      <img src="images/databricks ap.png" alt="Databricks Accredited Azure Platform Architect" class="img-fluid" style="max-width:200px;">
+    </a>
+    <p>Databricks Accredited Azure Platform Architect</p>
+  </div>
+  <div class="col-md-3 text-center mb-4">
+    <a href="https://credentials.databricks.com/044a0269-9bb0-46cb-a5fa-3d76ebb6db39#acc.UL8rip1e" target="_blank">
+      <img src="images/genai llm dbrx.png" alt="Gen AI &amp; LLM on Databricks" class="img-fluid" style="max-width:200px;">
+    </a>
+    <p>Gen AI &amp; LLM on Databricks</p>
+  </div>
+  <div class="col-md-3 text-center mb-4">
+    <a href="https://achieve.snowflake.com/a41c4026-1b25-4967-828a-05534829c9d9" target="_blank">
+      <img src="images/sf_asso_pltfm.png" alt="Snowflake Associate Platform" class="img-fluid" style="max-width:200px;">
+    </a>
+    <p>SnowPro Associate: Platform Certification</p>
+  </div>
+</div>
+
+    </section>
+
+    <!-- Enhanced Blog Section with Dynamic Medium Articles -->
+    <section id="blog" class="mb-5">
+      <h2 class="mb-3 text-center"><i class="fa-brands fa-medium"></i> Latest Articles</h2>
+      <p class="text-center mb-4">Exploring Azure, Data Engineering, and Cloud Technologies - Auto-updated from Medium</p>
+      <div class="medium-last-updated text-center" id="mediumLastUpdated"></div>
+      
+      <!-- Dynamic Medium Articles Slideshow -->
+      <div class="medium-slideshow-container">
+        <!-- Refresh Button -->
+        <button class="medium-refresh-btn" onclick="loadMediumArticles()" title="Refresh Articles">
+          <i class="fas fa-sync-alt" id="mediumRefreshIcon"></i> Refresh
+        </button>
+
+        <div id="mediumCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="8000">
+          <!-- Loading State -->
+          <div id="mediumLoadingState" class="medium-loading-state">
+            <div class="spinner-border text-primary" role="status"></div>
+            <p class="mt-3">Loading latest articles...</p>
+          </div>
+          
+          <!-- Error State -->
+          <div id="mediumErrorState" class="medium-error-state d-none">
+            <i class="fas fa-exclamation-triangle text-warning fa-2x mb-3"></i>
+            <p>Unable to load articles. Please try refreshing.</p>
+          </div>
+
+          <!-- Dynamic Indicators -->
+          <div class="carousel-indicators" id="mediumCarouselIndicators"></div>
+
+          <!-- Dynamic Slides -->
+          <div class="carousel-inner" id="mediumCarouselInner"></div>
+
+          <!-- Controls -->
+          <button class="carousel-control-prev d-none" type="button" data-bs-target="#mediumCarousel" data-bs-slide="prev" id="mediumPrevBtn">
+            <span class="carousel-control-prev-icon"></span>
+          </button>
+          <button class="carousel-control-next d-none" type="button" data-bs-target="#mediumCarousel" data-bs-slide="next" id="mediumNextBtn">
+            <span class="carousel-control-next-icon"></span>
+          </button>
+        </div>
+      </div>
+
+      <!-- View All Articles Button -->
+      <div class="text-center mt-4">
+        <a href="https://medium.com/@ajayfrom2k" target="_blank" class="btn btn-primary">
+          <i class="fab fa-medium"></i> Visit My Medium Profile
+        </a>
+      </div>
+    </section>
+
     <!-- Awards Section -->
-    <section id="awards">
-      <h2><i class="fa-solid fa-trophy"></i> Awards and Achievements</h2>
-      <p>Lauded within cross-functional teams at ZS as the “Flawless Finishers” after implementing refined protocols that increased accuracy on deliverables up to 99%.</p>
+    <section id="awards" class="mb-5">
+      <h2 class="mb-3 text-center">
+        <i class="fa-solid fa-trophy"></i> Awards and Achievements
+      </h2>
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-4 mb-3">
+          <div class="card  award-card border-0">
+            <img src="images/flawless finishers.png" class="card-img-top" alt="Award Image">
+            <div class="card-body text-center">
+              <h5 class="card-title">Flawless Finishers Award</h5>
+              <p class="card-text">
+                Lauded within cross-functional teams at ZS as the "Flawless Finishers," I implemented refined protocols that significantly enhanced operational efficiency and deliverable accuracy. Recognized for my innovative approach, I streamlined complex processes to ensure meticulous quality control, resulting in a dramatic increase in accuracy to 99%. This accolade stands as a testament to the relentless pursuit of excellence, effective collaboration, and a commitment to continuous improvement in a competitive environment.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
     
     <!-- Contact Section -->
-    <section id="contact">
-      <h2><i class="fa-solid fa-envelope"></i> Contact</h2>
-      <div class="contact-grid">
-        <a href="mailto:ajaysri2016@gmail.com" title="Email">
-          <i class="fa-solid fa-envelope"></i>
-          <p>Email</p>
-        </a>
-        <a href="https://www.linkedin.com/in/ajayj2000/" title="LinkedIn" target="_blank">
-          <i class="fa-brands fa-linkedin"></i>
-          <p>LinkedIn</p>
-        </a>
-        <a href="https://github.com/AjayAJ2000" title="GitHub" target="_blank">
-          <i class="fa-brands fa-github"></i>
-          <p>GitHub</p>
-        </a>
-        <a href="https://www.instagram.com/ajay.jayaraj.04/" title="Instagram" target="_blank">
-          <i class="fa-brands fa-instagram"></i>
-          <p>Instagram</p>
-        </a>
-        <a href="https://wa.me/+918220937538" title="WhatsApp" target="_blank">
-          <i class="fa-brands fa-whatsapp"></i>
-          <p>WhatsApp</p>
-        </a>
-        <a href="tel:+918220937538" title="Phone">
-          <i class="fa-solid fa-phone"></i>
-          <p>Phone</p>
-        </a>
+    <section id="contact" class="mb-3">
+      <h2 class="mb-3 text-center"><i class="fa-solid fa-envelope"></i> Contact</h2>
+      <div class="row text-center">
+        <div class="col-3 col-md-2 mb-3">
+          <a href="mailto:ajaysri2016@gmail.com" class="text-decoration-none text-primary">
+            <i class="fa-solid fa-envelope fa-2x"></i>
+            <p>Email</p>
+          </a>
+        </div>
+        <div class="col-3 col-md-2 mb-3">
+          <a href="https://www.linkedin.com/in/ajayj2000/" target="_blank" class="text-decoration-none text-primary">
+            <i class="fa-brands fa-linkedin fa-2x"></i>
+            <p>LinkedIn</p>
+          </a>
+        </div>
+        <div class="col-3 col-md-2 mb-3">
+          <a href="https://github.com/AjayAJ2000" target="_blank" class="text-decoration-none text-primary">
+            <i class="fa-brands fa-github fa-2x"></i>
+            <p>GitHub</p>
+          </a>
+        </div>
       </div>
     </section>
   </main>
-  
-  <!-- FOOTER -->
-  <footer class="cyberpunk">
+
+  <!-- Footer -->
+  <footer class="bg-dark text-center text-white py-3">
     <p>&copy; 2025 Ajay Jayaraj. All rights reserved.</p>
   </footer>
-  
-  <!-- JAVASCRIPT -->
+
+  <!-- Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Medium Articles Dynamic Loading Script -->
   <script>
-        document.addEventListener('DOMContentLoaded', () => {
-      // Smooth scrolling for nav links
-      document.querySelectorAll('.nav-list a').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-          e.preventDefault();
-          const targetId = this.getAttribute('href');
-          document.querySelector(targetId).scrollIntoView({ behavior: 'smooth' });
+    let mediumArticles = [];
+    let mediumCarousel;
+
+    // Multiple CORS proxies for better reliability
+    const MEDIUM_CORS_PROXIES = [
+      'https://corsproxy.io/?',
+      'https://api.allorigins.win/get?url=',
+      'https://cors-anywhere.herokuapp.com/'
+    ];
+    const MEDIUM_RSS_URL = 'https://medium.com/feed/@ajayfrom2k';
+
+    // Fallback sample articles in case RSS fails
+    const MEDIUM_FALLBACK_ARTICLES = [
+      {
+        title: "Master Complex Data Orchestration: Advanced ADF Pipeline Patterns with Dynamic Parameters",
+        link: "https://medium.com/@ajayfrom2k",
+        pubDate: new Date('2024-06-22'),
+        description: "Discover advanced Azure Data Factory pipeline patterns that go beyond basic ETL. Learn how to implement dynamic parameters, complex conditional logic, and enterprise-grade data orchestration patterns that scale with your business needs.",
+        readingTime: 8,
+        techKeywords: ["Azure Data Factory", "ETL", "Data Engineering", "Azure"]
+      },
+      {
+        title: "Modernize Legacy SQL Workloads: Deploy High-Availability SQL Server on Azure Arc-Enabled Kubernetes",
+        link: "https://medium.com/@ajayfrom2k/modernize-legacy-sql-workloads-deploy-high-availability-sql-server-on-azure-arc-enabled-kubernetes-21a2f96e0090",
+        pubDate: new Date('2024-05-15'),
+        description: "Transform your traditional SQL Server deployments into cloud-native, highly available solutions without abandoning your hybrid infrastructure requirements.",
+        readingTime: 12,
+        techKeywords: ["Azure Arc", "SQL Server", "Kubernetes", "High Availability"]
+      },
+      {
+        title: "Building Scalable Data Pipelines: Best Practices for Enterprise Data Architecture",
+        link: "https://medium.com/@ajayfrom2k",
+        pubDate: new Date('2024-05-01'),
+        description: "Explore the fundamental principles of designing robust, scalable data pipelines that can handle enterprise-level workloads.",
+        readingTime: 10,
+        techKeywords: ["Data Architecture", "Azure", "Scalability", "ETL"]
+      },
+      {
+        title: "Cloud Migration Strategies: Moving Enterprise Workloads to Azure with Confidence",
+        link: "https://medium.com/@ajayfrom2k",
+        pubDate: new Date('2024-04-15'),
+        description: "Navigate the complexities of cloud migration with proven strategies and real-world examples.",
+        readingTime: 15,
+        techKeywords: ["Cloud Migration", "Azure", "Enterprise", "DevOps"]
+      },
+      {
+        title: "Advanced Azure Data Factory Monitoring and Alerting Strategies",
+        link: "https://medium.com/@ajayfrom2k",
+        pubDate: new Date('2024-04-01'),
+        description: "Implement comprehensive monitoring and alerting for your Azure Data Factory pipelines.",
+        readingTime: 9,
+        techKeywords: ["Azure Data Factory", "Monitoring", "DevOps", "Alerting"]
+      },
+      {
+        title: "Optimizing Azure SQL Database Performance: A Complete Guide",
+        link: "https://medium.com/@ajayfrom2k",
+        pubDate: new Date('2024-03-20'),
+        description: "Master the art of Azure SQL Database performance optimization with advanced techniques.",
+        readingTime: 11,
+        techKeywords: ["Azure SQL", "Performance", "Database", "Optimization"]
+      }
+    ];
+
+    async function loadMediumArticles() {
+      const loadingState = document.getElementById('mediumLoadingState');
+      const errorState = document.getElementById('mediumErrorState');
+      const refreshIcon = document.getElementById('mediumRefreshIcon');
+      
+      // Show loading state
+      loadingState.classList.remove('d-none');
+      errorState.classList.add('d-none');
+      refreshIcon.classList.add('fa-spin');
+      
+      // Try to fetch from RSS feed with multiple proxies
+      let success = false;
+      
+      for (let i = 0; i < MEDIUM_CORS_PROXIES.length && !success; i++) {
+        try {
+          console.log(`Trying Medium proxy ${i + 1}:`, MEDIUM_CORS_PROXIES[i]);
+          
+          let fetchUrl;
+          if (MEDIUM_CORS_PROXIES[i].includes('allorigins')) {
+            fetchUrl = `${MEDIUM_CORS_PROXIES[i]}${encodeURIComponent(MEDIUM_RSS_URL)}`;
+          } else {
+            fetchUrl = `${MEDIUM_CORS_PROXIES[i]}${MEDIUM_RSS_URL}`;
+          }
+          
+          const response = await fetch(fetchUrl, {
+            method: 'GET',
+            headers: {
+              'Accept': 'application/json, text/plain, */*',
+            },
+            timeout: 10000
+          });
+          
+          if (!response.ok) {
+            throw new Error(`HTTP ${response.status}`);
+          }
+          
+          let xmlContent;
+          if (MEDIUM_CORS_PROXIES[i].includes('allorigins')) {
+            const data = await response.json();
+            xmlContent = data.contents;
+          } else {
+            xmlContent = await response.text();
+          }
+          
+          if (!xmlContent) {
+            throw new Error('No content received');
+          }
+          
+          // Parse RSS XML
+          const parser = new DOMParser();
+          const xmlDoc = parser.parseFromString(xmlContent, 'text/xml');
+          
+          // Check for parsing errors
+          const parserError = xmlDoc.querySelector('parsererror');
+          if (parserError) {
+            throw new Error('XML parsing failed');
+          }
+          
+          const items = xmlDoc.querySelectorAll('item');
+          
+          if (items.length === 0) {
+            throw new Error('No articles found in RSS feed');
+          }
+          
+          mediumArticles = Array.from(items).slice(0, 6).map((item, index) => {
+            const title = item.querySelector('title')?.textContent || 'Untitled Article';
+            const link = item.querySelector('link')?.textContent || item.querySelector('guid')?.textContent || 'https://medium.com/@ajayfrom2k';
+            const pubDateText = item.querySelector('pubDate')?.textContent;
+            const pubDate = pubDateText ? new Date(pubDateText) : new Date();
+            const description = item.querySelector('description')?.textContent || item.querySelector('content\\:encoded')?.textContent || '';
+            
+            // Clean up description (remove HTML tags)
+            const tempDiv = document.createElement('div');
+            tempDiv.innerHTML = description;
+            const cleanDescription = tempDiv.textContent || tempDiv.innerText || 'Click to read the full article on Medium.';
+            
+            // Extract reading time (estimate)
+            const wordCount = cleanDescription.split(' ').length;
+            const readingTime = Math.max(1, Math.ceil(wordCount / 200));
+            
+            // Extract tech keywords for badges
+            const techKeywords = extractMediumTechKeywords(title + ' ' + cleanDescription);
+            
+            return {
+              title,
+              link,
+              pubDate,
+              description: cleanDescription.substring(0, 300) + (cleanDescription.length > 300 ? '...' : ''),
+              readingTime,
+              techKeywords
+            };
+          });
+          
+          success = true;
+          console.log(`Successfully loaded ${mediumArticles.length} articles using proxy ${i + 1}`);
+          
+        } catch (error) {
+          console.warn(`Medium proxy ${i + 1} failed:`, error.message);
+          continue;
+        }
+      }
+      
+      // If all proxies failed, use fallback articles
+      if (!success) {
+        console.log('All Medium proxies failed, using fallback articles');
+        mediumArticles = MEDIUM_FALLBACK_ARTICLES;
+        
+        // Show a notice that we're using cached content
+        const errorNotice = document.createElement('div');
+        errorNotice.className = 'alert alert-warning mx-3 mb-3';
+        errorNotice.innerHTML = '<small><i class="fas fa-info-circle"></i> Showing cached articles - RSS feed temporarily unavailable</small>';
+        document.querySelector('.medium-slideshow-container').prepend(errorNotice);
+        
+        setTimeout(() => errorNotice.remove(), 5000);
+      }
+      
+      renderMediumSlideshow();
+      updateMediumLastUpdated();
+      refreshIcon.classList.remove('fa-spin');
+    }
+
+    function extractMediumTechKeywords(text) {
+      const keywords = [
+        'Azure', 'ADF', 'Data Factory', 'SQL Server', 'Kubernetes', 'Docker',
+        'Python', 'JavaScript', 'React', 'Node.js', 'MongoDB', 'PostgreSQL',
+        'AWS', 'Google Cloud', 'DevOps', 'CI/CD', 'Machine Learning', 'AI',
+        'Microservices', 'API', 'REST', 'GraphQL', 'TypeScript', 'Vue.js',
+        'Angular', 'Express', 'Django', 'Flask', 'Spring Boot', 'ETL',
+        'Data Engineering', 'Big Data', 'Analytics', 'Power BI', 'Tableau',
+        'Spark', 'Hadoop', 'Kafka', 'Redis', 'Elasticsearch', 'Git',
+        'Jenkins', 'Terraform', 'Ansible', 'Cloud', 'Serverless', 'Databricks',
+        'Snowflake', 'Arc', 'High Availability', 'HIPAA', 'Security'
+      ];
+      
+      const foundKeywords = keywords.filter(keyword => 
+        text.toLowerCase().includes(keyword.toLowerCase())
+      );
+      
+      return foundKeywords.slice(0, 4); // Limit to 4 badges
+    }
+
+    function renderMediumSlideshow() {
+  const carouselInner = document.getElementById('mediumCarouselInner');
+  const carouselIndicators = document.getElementById('mediumCarouselIndicators');
+  const loadingState = document.getElementById('mediumLoadingState');
+  const prevBtn = document.getElementById('mediumPrevBtn');
+  const nextBtn = document.getElementById('mediumNextBtn');
+  
+  // Clear existing content
+  carouselInner.innerHTML = '';
+  carouselIndicators.innerHTML = '';
+  
+  // Create indicators
+  mediumArticles.forEach((_, index) => {
+    const indicator = document.createElement('button');
+    indicator.type = 'button';
+    indicator.setAttribute('data-bs-target', '#mediumCarousel');
+    indicator.setAttribute('data-bs-slide-to', index);
+    indicator.setAttribute('aria-label', `Slide ${index + 1}`);
+    if (index === 0) {
+      indicator.classList.add('active');
+      indicator.setAttribute('aria-current', 'true');
+    }
+    carouselIndicators.appendChild(indicator);
+  });
+  
+  // Create slides - FIX: Use correct Bootstrap carousel-item class
+  mediumArticles.forEach((article, index) => {
+    const slide = document.createElement('div');
+    // Fix: Use only 'carousel-item' class, not 'medium-carousel-item'
+    slide.className = `carousel-item${index === 0 ? ' active' : ''}`;
+    
+    // Add the medium-carousel-item as a child div
+    slide.innerHTML = `
+      <div class="medium-carousel-item">
+        <div class="medium-article-card">
+          <h3 class="medium-article-title">${article.title}</h3>
+          <div class="medium-article-meta">
+            <span><i class="fas fa-calendar-alt"></i> ${formatMediumDate(article.pubDate)}</span>
+            <span><i class="fas fa-clock"></i> ${article.readingTime} min read</span>
+          </div>
+          <p class="medium-article-excerpt">${article.description}</p>
+          <div class="mb-3">
+            ${article.techKeywords.map(keyword => 
+              `<span class="medium-tech-badge">${keyword}</span>`
+            ).join('')}
+          </div>
+          <a href="${article.link}" target="_blank" class="medium-read-more-btn">
+            <i class="fas fa-external-link-alt"></i> Read on Medium
+          </a>
+        </div>
+      </div>
+    `;
+    
+    carouselInner.appendChild(slide);
+  });
+  
+  // Hide loading state and show controls
+  loadingState.classList.add('d-none');
+  if (mediumArticles.length > 1) {
+    prevBtn.classList.remove('d-none');
+    nextBtn.classList.remove('d-none');
+  }
+  
+  // Initialize carousel - Fix: Dispose properly
+  const carouselElement = document.getElementById('mediumCarousel');
+  if (mediumCarousel) {
+    mediumCarousel.dispose();
+  }
+  
+  // Re-initialize carousel
+  mediumCarousel = new bootstrap.Carousel(carouselElement, {
+    interval: 8000,
+    wrap: true,
+    ride: 'carousel' // Add this
+  });
+  
+  // Add hover effects
+  addMediumHoverEffects();
+}
+
+    function formatMediumDate(date) {
+      const options = { 
+        year: 'numeric', 
+        month: 'short', 
+        day: 'numeric' 
+      };
+      return date.toLocaleDateString('en-US', options);
+    }
+
+    function updateMediumLastUpdated() {
+      const lastUpdated = document.getElementById('mediumLastUpdated');
+      lastUpdated.textContent = `Last updated: ${new Date().toLocaleString()}`;
+    }
+
+    function addMediumHoverEffects() {
+      const cards = document.querySelectorAll('.medium-article-card');
+      
+      cards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+          this.style.transform = 'translateY(-5px)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+          this.style.transform = 'translateY(0)';
         });
       });
-
-      // Navbar toggle for mobile view
-      const navToggle = document.getElementById('nav-toggle');
-      const navList = document.getElementById('nav-list');
-      navToggle.addEventListener('click', () => {
-        navList.classList.toggle('active');
+      
+      // Pause carousel on hover
+      const carouselElement = document.getElementById('mediumCarousel');
+      carouselElement.addEventListener('mouseenter', function() {
+        if (mediumCarousel) mediumCarousel.pause();
       });
+      
+      carouselElement.addEventListener('mouseleave', function() {
+        if (mediumCarousel) mediumCarousel.cycle();
+      });
+    }
 
-      // Initialize Typed.js for tagline (existing)
+    // Auto-refresh Medium articles every 10 minutes
+    setInterval(loadMediumArticles, 10 * 60 * 1000);
+  </script>
+
+  <!-- Custom Script for Typed.js and Theme Toggle -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Initialize Typed.js for tagline animation
       new Typed('#typed-text', {
         strings: [
           "Data Engineer exploring new frontiers",
@@ -263,47 +1375,85 @@
         startDelay: 500,
         loop: true
       });
-  
-      // Floating share panel toggle
-      const shareToggle = document.getElementById('share-toggle');
-      const socialIcons = document.getElementById('social-icons');
-  
-      shareToggle.addEventListener('click', (event) => {
-        event.stopPropagation(); // Prevent click from propagating to document
-        socialIcons.classList.toggle('visible');
-        // Toggle icon: if panel is visible, show "times" icon, else show "share-nodes"
-        if (socialIcons.classList.contains('visible')) {
-          shareToggle.innerHTML = '<i class="fa-solid fa-times"></i>';
+
+      // Load Medium articles on page load
+      loadMediumArticles();
+
+      // Theme toggle logic
+      const themeToggle = document.getElementById('theme-toggle');
+      const body = document.body;
+      const navbar = document.querySelector('.navbar');
+      const cards = document.querySelectorAll('.card');
+      const accordionItems = document.querySelectorAll('.accordion-item');
+      const accordionButtons = document.querySelectorAll('.accordion-button');
+      const accordions = document.querySelectorAll('.accordion');
+      const awardCards = document.querySelectorAll('.award-card');
+      const textElements = document.querySelectorAll('.text-light, .text-dark');
+
+      const updateTheme = (isDarkMode) => {
+        if (isDarkMode) {
+          body.classList.add('bg-dark', 'text-light');
+          body.classList.remove('bg-light', 'text-dark');
+          navbar.classList.add('navbar-dark', 'bg-dark');
+          navbar.classList.remove('navbar-light', 'bg-light');
+          themeToggle.innerHTML = '<i class="fa-solid fa-sun"></i>';
+          cards.forEach(card => card.classList.replace('bg-light', 'bg-dark'));
+          accordionItems.forEach(item => {
+            item.classList.replace('bg-light', 'bg-dark');
+            item.classList.replace('text-dark', 'text-light');
+          });
+          accordionButtons.forEach(button => {
+            button.classList.replace('bg-light', 'bg-dark');
+            button.classList.replace('text-dark', 'text-light');
+          });
+          accordions.forEach(accordion => accordion.classList.replace('bg-light', 'bg-dark'));
+          awardCards.forEach(card => card.classList.replace('bg-light', 'bg-dark'));
+          textElements.forEach(el => {
+            el.classList.remove('text-dark');
+            el.classList.add('text-light');
+          });
         } else {
-          shareToggle.innerHTML = '<i class="fa-solid fa-share-nodes"></i>';
+          body.classList.remove('bg-dark', 'text-light');
+          body.classList.add('bg-light', 'text-dark');
+          navbar.classList.remove('navbar-dark', 'bg-dark');
+          navbar.classList.add('navbar-light', 'bg-light');
+          themeToggle.innerHTML = '<i class="fa-solid fa-moon"></i>';
+          cards.forEach(card => card.classList.replace('bg-dark', 'bg-light'));
+          accordionItems.forEach(item => {
+            item.classList.replace('bg-dark', 'bg-light');
+            item.classList.replace('text-light', 'text-dark');
+          });
+          accordionButtons.forEach(button => {
+            button.classList.replace('bg-dark', 'bg-light');
+            button.classList.replace('text-light', 'text-dark');
+          });
+          accordions.forEach(accordion => accordion.classList.replace('bg-dark', 'bg-light'));
+          awardCards.forEach(card => card.classList.replace('bg-dark', 'bg-light'));
+          textElements.forEach(el => {
+            el.classList.remove('text-light');
+            el.classList.add('text-dark');
+          });
         }
-      });
-  
-      // If user clicks outside the floating panel, close the social icons if open
-      document.addEventListener('click', (e) => {
-        if (!document.querySelector('.floating-buttons').contains(e.target)) {
-          if (socialIcons.classList.contains('visible')) {
-            socialIcons.classList.remove('visible');
-            shareToggle.innerHTML = '<i class="fa-solid fa-share-nodes"></i>';
-          }
-        }
+      };
+
+      themeToggle.addEventListener('click', () => {
+        const isDarkMode = body.classList.contains('bg-dark');
+        updateTheme(!isDarkMode);
       });
 
-      // Theme toggle
-      const themeToggle = document.getElementById('theme-toggle');
-      themeToggle.addEventListener('click', () => {
-        document.body.classList.toggle('light-mode');
-        if (document.body.classList.contains('light-mode')) {
-          themeToggle.innerHTML = '<i class="fa-solid fa-moon"></i>';
-        } else {
-          themeToggle.innerHTML = '<i class="fa-solid fa-circle-half-stroke"></i>';
-        }
-        // Toggle theme for floating buttons
-        document.querySelectorAll('.floating-buttons button').forEach(button => {
-          button.classList.toggle('light-mode');
+      // Update accordion toggle icons
+      accordionButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          const icon = button.querySelector('i');
+          const isExpanded = button.getAttribute('aria-expanded') === 'true';
+          if (icon) {
+            icon.classList.toggle('fa-chevron-down', !isExpanded);
+            icon.classList.toggle('fa-chevron-up', isExpanded);
+            icon.style.filter = 'invert(1)';
+          }
         });
       });
-  });
+    });
   </script>
 </body>
 </html>
